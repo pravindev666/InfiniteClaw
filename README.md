@@ -21,7 +21,7 @@
 
 **InfiniteClaw** is a **local-first, AI-powered DevOps infrastructure management platform** that connects to your remote servers via SSH and provides unified control over 31 enterprise DevOps tools through a single, intelligent dashboard.
 
-It evolves your infrastructure into a **"God-Mode"** environment where a single engineer can manage an entire corporate fleet autonomously.
+It evolves your infrastructure into an **"Alpha-Mode"** environment where a single engineer can manage an entire corporate fleet autonomously.
 
 ---
 
@@ -106,7 +106,7 @@ InfiniteClaw honors the legacy of **WolfClaw** by providing robust support for v
 
 ---
 
-## 🚀 Quick Start (God-Mode Edition)
+## 🚀 Quick Start (Alpha-Mode Edition)
 
 ```bash
 # Clone and Setup

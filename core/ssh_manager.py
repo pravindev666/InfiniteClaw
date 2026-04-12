@@ -34,7 +34,7 @@ class SSHConnection:
                 if auth == "key" and self.config.get("key_content"):
                     k_cont = self.config["key_content"]
                     if "PuTTY-User-Key-File" in k_cont:
-                        raise ValueError("PuTTY (PPK) key detected. InfiniteClaw's God-Mode engine requires OpenSSH (PEM) format. Please export as OpenSSH in PuTTYGen (just like in WolfClaw legacy setups).")
+                        raise ValueError("PuTTY (PPK) key detected. InfiniteClaw's Alpha-Mode engine requires OpenSSH (PEM) format. Please export as OpenSSH in PuTTYGen (just like in WolfClaw legacy setups).")
                     
                     key_file = io.StringIO(k_cont)
                     try:

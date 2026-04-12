@@ -89,7 +89,7 @@ def init_db():
     )
     ''')
 
-    # ─── Pipeline Snapshots (God-Mode) ───
+    # ─── Pipeline Snapshots (Alpha-Mode) ───
     c.execute('''
     CREATE TABLE IF NOT EXISTS pipeline_snapshots (
         id TEXT PRIMARY KEY,
