@@ -1,0 +1,137 @@
+---
+- name: Install tools on target nodes
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Update and upgrade system
+      apt:
+        update_cache: yes
+        upgrade: dist
+      when: ansible_os_family == "Debian"
+
+    - name: Add Jenkins GPG key
+      shell: |
+        curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | gpg --dearmor -o /usr/share/keyrings/jenkins-keyring.gpg
+      args:
+        creates: /usr/share/keyrings/jenkins-keyring.gpg
+
+    - name: Add Jenkins repository
+      copy:
+        content: |
+          deb [signed-by=/usr/share/keyrings/jenkins-keyring.gpg] https://pkg.jenkins.io/debian-stable binary/
+        dest: /etc/apt/sources.list.d/jenkins.list
+
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install Jenkins
+      apt:
+        name: jenkins
+        state: latest
+
+
+    - name: Install Git
+      apt:
+        name: git
+        state: latest
+
+    - name: Download Prometheus
+      get_url:
+        url: "https://github.com/prometheus/prometheus/releases/download/v2.47.0/prometheus-2.47.0.linux-amd64.tar.gz"
+        dest: "/tmp/prometheus-2.47.0.linux-amd64.tar.gz"
+        mode: '0644'
+
+    - name: Extract Prometheus
+      unarchive:
+        src: "/tmp/prometheus-2.47.0.linux-amd64.tar.gz"
+        dest: "/opt/"
+        remote_src: yes
+
+    - name: Rename Prometheus directory
+      command: mv /opt/prometheus-2.47.0.linux-amd64 /opt/prometheus
+      args:
+        creates: /opt/prometheus
+
+    - name: Download Splunk
+      get_url:
+        url: "https://download.splunk.com/products/splunk/releases/latest/linux/splunk-latest-linux-x86_64.tgz"
+        dest: "/tmp/splunk-latest.tgz"
+        mode: '0644'
+
+    - name: Extract Splunk
+      unarchive:
+        src: "/tmp/splunk-latest.tgz"
+        dest: "/opt/"
+        remote_src: yes
+
+
+    - name: Ensure Splunk directory is set up
+      file:
+        path: "/opt/splunk"
+        state: directory
+        owner: root
+        group: root
+
+    - name: Move Splunk files to the directory
+      command: mv /opt/splunk-* /opt/splunk
+      args:
+        creates: /opt/splunk/bin/splunk
+
+    - name: Add Grafana repository
+      apt_repository:
+        repo: "deb https://packages.grafana.com/oss/deb stable main"
+        state: present
+        filename: grafana
+
+    - name: Add Grafana GPG key
+      apt_key:
+        url: "https://packages.grafana.com/gpg.key"
+        state: present
+
+    - name: Install Grafana
+      apt:
+        name: grafana
+        state: latest
+
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: latest
+
+    - name: Install Tomcat
+      apt:
+        name: tomcat9
+        state: latest
+
+    - name: Install Terraform
+      shell: >
+        wget https://releases.hashicorp.com/terraform/1.6.0/terraform_1.6.0_linux_amd64.zip &&
+        unzip terraform_1.6.0_linux_amd64.zip -d /usr/local/bin
+      args:
+        creates: /usr/local/bin/terraform
+
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: latest
+
+    - name: Install AWS CLI
+      shell: >
+        curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" &&
+        unzip awscliv2.zip &&
+        ./aws/install
+      args:
+        creates: /usr/local/bin/aws
+
+    - name: Install additional tools
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - sl
+        - neofetch
+        - cmatrix
+        - btop
+        - htop

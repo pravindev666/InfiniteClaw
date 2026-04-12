@@ -1,0 +1,41 @@
+
+
+Why Kubernetes?
+
+- A software tool to run Dockerized application in the Cluster of Nodes
+- Used to Monitor & efficiently managing the environment of the Enterprise Application
+- Also been called as Orchestrational Engine
+- It take cares about the Stability of the Application, in order to brings up the functional units automatically.
+
+Use case for understanding in Deep:- 
+
+Example case - Swiggy or Flipcat Online Applications.
+
+Microservices applications involved:
+1. Search App
+2. Pricing App
+3. Cart App
+4. Order App
+5. Payment App
+
+Note: Differs in the number of VMs or Containers involved.
+
+
+
+History of K8s?
+
+- It is an open-source container-orchestration system for automating application deployment & management, which was originally designed by Google in 2014.
+- Now it is maintained by CNCF [Cloud Native Computing Foundation] .
+- Written with GO language.
+
+
+Knowledge Pre-requisites for K8s
+
+Below are the Key points which we need to be familiar,
+
+- Basics structures of Json/Yaml
+- Concepts about API & Rest API
+- Content of an Enterprise Application - EAR
+- Understanding of Architecture flow.
+
+

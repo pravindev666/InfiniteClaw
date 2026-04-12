@@ -1,0 +1,36 @@
+
+
+K8s Architecture:-
+
+- It's a management Architecture, that comprises various managable components into it.
+- Which gives an Orchestration system
+
+- Master Node
+1) API server - Its a front end, to communicate & maintain configurations of Cluster
+2) Controller Manager - Controls the number of POD replicas & creations.
+3) Scheduler - Schedules the Pod activities.
+4) etcd -  Distributed key value db. All the details of the cluster will be stored & kept here.
+
+- Worker Node
+1) Kubelet - It is an agent/connectivity, to Monitor/ manage the containers in the Pod.
+2) Kubeproxy - Bridge between App_user & Application. It is a logical endpoint.
+3) POD - Grouped containers, functional units in K8S.
+4) Containers - Container runtime, K8S suppports Docker, Mesos, OpenVZ, Marathon.
+
+- Kubectl
+1) Its a tool used to communicate with the Kubernetes cluster.
+2) It connected with the APIServer for the communication
+3) ~/.kube/config file contains the cluster information and shares to kubectl
+4) kubectl command format,
+
+kubectl <Operation_command>  <Type_command>  <Name_command>
+
+- Operations:- Get, Create, Delete, Describe, Logs, etc
+- Type:- Pods, Deployments, Jobs, Namespace, etc
+- Name:- Seach-pod, Cart-Deployment, Ui-Service, mail-jobs, etc
+
+eg:- kubectl get pod test-pod
+
+To delete Cluster
+============
+kops delete cluster --name=vijay.k8s.local --state=s3://kopsvijays-24 --yes

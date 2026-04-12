@@ -1,0 +1,224 @@
+======================
+Docker-3
+============================
+#docker pull
+#docker images
+#docker run -itd --name contid -p httpd
+#docker exec -it contid
+#docker inspect
+#docker stats
+#docker rmi-->image delete
+#docker contaimer rm--->container remove
+#docker contaimer rm -f-->by force delete
+#docker search image
+#docker container prune--->all container deletes fully
+#docker commit cont imagename
+#docker save -o--->image backup in a path
+saves in a .tar format
+#docker load -i-->that file will resume as image
+#docker pull dockerhub/
+#docker login
+#docker logout
+#docker push
+
+#vi Dockerfile
+#docker build -t imageid or name .
+#docker images
+#docker run -itd --name contid -p httpd
+=========================================================================
+For Images
+Took Local backup and Cloud backup
+
+ec2 server-->Container-->file 1,2,3
+How to bring the data in conatiner
+Backup Conatiner?
+*synchronization volume(bind volume)
+ec2 server and container is synched
+ec2 user ->root/myfile/ this path and the container path is synchedx
+example:if i create a folder named isral in ec2
+that folder named israel will appear in the container
+the benefit is:if the container along with the data will be backed up
+the new conatiner will synched with the ec2-user
+#sudo su
+#pwd
+#mkdir 666
+#cd 666
+666$vi index.html--->write anything
+#docker run -itd --name sync1 -p "8088:80" -v "/root/arun:/usr/local/apache2/htdocs" httpd
+#docker ps
+open in google ipaddress:8088
+even if didnt enter the container the output shows
+#docker exec -it contid /bin/bash
+-->inside the conatiner
+#cd htdocs/
+#ls
+#cat index.html
+#echo "good morning" > index.html
+otput will be changed
+#mkdir kumar
+#mkdir raju
+#ls
+exit
+-->inside ec2-user
+#docker ps
+#docker comatiner rm -f contid
+that conatiner will be deleted
+#i have the image that will run as container
+but that data
+#docker ps
+#ls
+now all the folders that i created will come when listed
+
+====================================================================
+Now application hosting in docker container
+https://www.free-css.com/assets/files/free-css-templates/download/page285/a-world.zip
+now bringing it inside the server
+#wget the link
+#apt install unzip
+#ls
+#.zip
+#unzip the filename
+#ls
+#shows html file
+#cd html/
+shows the conent
+#pwd
+/root/html
+#docker run -itd --name web2 -p "8086:80" -v "/root/html : /usr/local/apache2/htdocs" httpd
+google ip:8086
+shows the website
+root path is synced with the container
+================================================
+*MOUNT(unbind Volume)
+
+AWS EFS-->Elastic file system
+Concept:Shared Volume
+
+one application will run on multiple containers in load  balancing
+#docker volume create anyname
+#docker volume ls
+now we have create a mounting path
+#docker inspect anyname
+shows the path
+/var/lib/docker/volume/myvol/_data 
+root#docker run -itd --name upper sync -p "8083:80" --mount source=anyname,destination=/usr/local/apache2/htdocs httpd
+or
+#docker run -itd --name sync -p "8083:80" --mount source=anyname,destination=/usr/local/apache2/htdocs httpd
+#docker ps
+root#docker run -itd --name sync1 -p "8084:80" --mount source=anyname,destination=/usr/local/apache2/htdocs httpd
+root#docker run -itd --name sync2 -p "8085:80" --mount source=anyname,destination=/usr/local/apache2/htdocs httpd
+
+root#docker volume ls
+#docker inspect anyname
+#cd /var/lib/docker/volumes/myvol/_data
+root/var...._data#ls
+index.html
+#cat index.html
+it works
+_data#docker ps
+sows the conatiners running
+copy the ip:portnumber
+it will work
+these containers are mounted on my volume
+any change done in one conatiner it will change all over the syncs 1,2 etc
+
+======================
+content in server is brought to docker file
+that wll converted to image taht wil run as container
+
+===============================================================
+
+root#
+#mkdir nginx
+#cd nginx/
+nginx#vi index.html
+nginx#vi dockerfile
+
+FROM nginx
+MAINTAINER mathew
+WORKDIR /usr/share/nginx/html
+COPY index.html /usr/share/nginx/html/index.html
+
+httpd path:var/www/html
+nginx path:/usr/share/nginx/html
+
+/usr/local/apache2-->in server
+working directory
+
+nginx#docker build -t nginximg .
+nginx#docker run -itd --name ngcont -p "8077:80" nginximg
+google ipadress:8077
+nginx#cat index.html
+
+docker file google
+Dockerfile refrence
+r8 side shows many commands
+===================================================
+
+kubernets
+in real time multiple containers will be running in multiple servers
+
+these will be connected to one server
+
+what happens if a server crashes
+
+clustering concept
+its like load balncing and auto scaling
+conatiners are auto scaled
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeport-svc
+spec:
+  selector:
+    apps: webapps
+  ports:
+    - name: http
+      port: 80
+      nodePort: 32000
+  type: NodePort
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodeport-pod
+  labels:
+    apps: webapps
+spec:
+  containers:
+  - name: pod1
+    image: httpd
+    ports:
+      - containerPort: 80    

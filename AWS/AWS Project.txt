@@ -1,0 +1,93 @@
+
+
+
+AWS PROJECT:
+
+1. AWS CERTIFICATE MANAGER CREATION
+	- REQUEST PUBLIC CERTIFICATES AS PER THE REGISTERED DOMAINS
+
+2. AWS ROUTE53 SETUP & LINK TO GODADDY DOMAIN DNS MGMT
+	- CREATE HOSTED ZONE
+	- MAP THE N-S UNDER GODADDY DOMAIN
+	- CREATE RECORD SET FROM ACM
+
+3. AWS RDS SETUP
+	- CREATE TWO DBS
+		i) PRODUCTION DB (SECURITY GROUP MAKE AS ALL TRAFFIC)
+		ii) DR DB (SECURITY GROUP MAKE AS ALL TRAFFIC)
+
+4. AWS IAM ROLE
+	- CREATE AN IAM ROLE WITH FULL ACCESS
+
+5. AWS EC2 CREATION
+	- CREATE TWO EC2 WITH IAM ROLES ENABLED & ADD USER DATA UNDER ADVANCED SECTION
+	- ADD THE BELOW DETAILS IN THE ADVANCED SECTION,
+User data:
+
+#!/bin/bash
+yum install httpd php-mysql -y
+amazon-linux-extras install -y php7.3
+cd /var/www/html
+echo "healthy" > healthy.html
+wget https://wordpress.org/latest.tar.gz
+tar -xzf latest.tar.gz
+cp -r wordpress/* /var/www/html/
+rm -rf wordpress
+rm -rf latest.tar.gz
+chmod -R 755 wp-content
+chown -R apache:apache wp-content
+wget https://s3.amazonaws.com/bucketforwordpresslab-donotdelete/htaccess.txt
+mv htaccess.txt .htaccess
+chkconfig httpd on
+service httpd start
+
+
+6. AWS ELB CREATION & SETUP
+	- CREATE TWO CLASSIC ELB & MAP THE APPROPIRATE EC2 TO IT
+
+7. ADD THE DB DETAILS UNDER WORDPRESS APPLICATION FOR BOTH DR & PRODUCTION
+	- CREATE & EDIT THE wp-config.php file IN BOTH THE EC2s
+
+8. LAUNCH THE WORDPRESS PAGE & POST IT WITH APPROPIRATE DR & PROD IMAGES TO GET DIFFERENCE IN THE APPLICATION PAGE.
+
+9. AWS R53 & ELB SYNC
+	- REFRESH THE R53
+	- CREATE RECORD SET AND MAP THE APPROPIRATE ELB UNDER THE ALIAS
+
+10. AWS S3 BUCKET CREATION
+	- CREATE TWO S3 BUCKETS
+	- SET CRONTAB JOBs IN THE EC2 IN SOME SMALL INTERVALS TO COPY THE CONTENT FROM PROD TO S3 & S3 TO DR,
+	- crontab -e
+
+PRODUCTION:
+
+*/2 * * * * aws s3 sync --delete /var/www/html/wp-content/uploads s3://wordpress-mediaasset-greens0811
+*/2 * * * * aws s3 sync --delete /var/www/html/ s3://wordpress-code-greens0811
+
+DR:
+
+*/2 * * * *  aws s3 sync --delete  s3://wordpress-mediaasset-greens0811 /var/www/html/wp-content/uploads
+*/2 * * * *  aws s3 sync --delete  s3://wordpress-code-greens0811 /var/www/html/
+
+
+
+==> WAIT FOR FEW MINS AND CHECK THE BELOW THINGS,
+	
+	- S3 BUCKET DATA
+	- CHECK THE DNS URL OF BOTH DEV & PROD.
+
+
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
+
+
+
+greenscloud.in
+proddb
+prodadm
+prodadm123
+
+dr.greenscloud.in
+drdb
+dradm
+dradm123

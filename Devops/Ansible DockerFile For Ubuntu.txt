@@ -1,0 +1,23 @@
+# Use the official AWS Linux image as the base
+FROM amazonlinux:latest
+
+# Update package repository and install required packages
+RUN yum update -y && \
+    yum install -y vim wget && \
+    yum clean all
+
+# Install Python and pip
+RUN yum install -y python3 python3-pip && \
+    yum clean all
+
+# Install Ansible via pip
+RUN pip3 install ansible
+
+# Set up a working directory
+WORKDIR /app
+
+# Example: Copy your Ansible playbook into the container
+# COPY playbook.yml /app/playbook.yml
+
+# Example: Run an Ansible playbook
+# CMD ["ansible-playbook", "playbook.yml"]

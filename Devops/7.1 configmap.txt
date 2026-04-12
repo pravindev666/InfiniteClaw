@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  APP_COLR: blue
+  APP_MODE: prod
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simple-webcolor-pod
+  labels:
+    name: simple-webcolor-pod
+spec:
+  nodeSelector:
+    env: prod
+  containers:
+  - name: simple-webcolor-pod
+    image: robertvilaseca/simple-web-color
+    ports:
+    - containerPort: 8080
+    envFrom:
+    - configMapRef:
+        name: app-config

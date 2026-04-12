@@ -1,0 +1,43 @@
+Docker Container
+Contents
+#yum install sudo -y
+#yum install vim -y
+#yum install wget -y
+#yum install git -y
+#yum install tar -y
+#yum install unzip -y
+====================
+splunk
+cd /opt
+wget -O splunk-9.0.1-82c987350fde-Linux-x86_64.tgz "https://download.splunk.com/products/splunk/releases/9.0.1/linux/splunk-9.0.1-82c987350fde-Linux-x86_64.tgz"
+ls
+tar -xvzf splunk-9.0.1-82c987350fde-Linux-x86_64.tgz
+ls
+cd splunk/
+ls
+cd bin/
+./splunk start
+username
+password
+./splunk enable listen 9997
+====================================================================
+Prometheus
+cd opt/
+wget https://github.com/prometheus/prometheus/releases/download/v2.45.5/prometheus-2.45.5.linux-amd64.tar.gz
+ls
+tar -xvzf prometheus-2.45.5.linux-amd64.tar.gz
+cd prometheus-2.45.5.linux-amd64
+
+
+
+
+
+
+
+
+
+
+
+
+
+

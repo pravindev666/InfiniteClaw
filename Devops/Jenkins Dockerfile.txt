@@ -1,0 +1,26 @@
+# Use the official Jenkins base image
+FROM jenkins/jenkins:lts
+
+# Switch to root user to install additional packages
+USER root
+
+# Install Vim and wget
+RUN apt-get update && \
+    apt-get install -y vim wget && \
+    apt-get clean
+
+# Expose the Jenkins port
+EXPOSE 8080
+
+# Expose the port for JNLP agents
+EXPOSE 50000
+
+# Switch back to the Jenkins user
+USER jenkins
+===================================================
+docker build -t jenkins .
+docker run -d -p 8080:8080 -p 50000:50000 --name jenkinscont jenkins
+docker exec -it jenkins /bin/bash
+
+
+it works even the password shows

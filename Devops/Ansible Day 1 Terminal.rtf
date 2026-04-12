@@ -1,0 +1,687 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fmodern Consolas;}{\f1\fmodern\fcharset0 Consolas;}{\f2\fnil\fcharset129 Courier New;}}
+{\colortbl ;\red20\green20\blue20;\red142\green142\blue142;\red16\green158\blue98;\red148\green146\blue12;\red170\green51\blue170;\red170\green64\blue64;\red56\green136\blue159;\red126\green126\blue12;\red170\green85\blue85;\red170\green83\blue170;\red9\green118\blue72;}
+\viewkind4\uc1\pard\f0\fs20 login as: ec2-user\cf1\highlight2 
+\par \cf0\highlight0 Authenticating with public key "imported-openssh-key" from agent\cf1\highlight2 
+\par \cf0\highlight0     \u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?\cf1\highlight2 
+\par \cf0\highlight0     \u9474?                 \cf3\f1\bullet  MobaXterm Personal Edition v24.1 \bullet\cf0\f0                  \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9474?               \cf4 (SSH client, X server and network tools)\cf0                \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9474?                                                                      \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9474? \u11166? SSH session to \cf5 ec2-user@54.179.69.81                     \cf0           \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9474?\f1    \bullet  Direct SSH      :  \cf3\f0\u10003?\cf0                                              \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9474?\f1    \bullet  SSH compression :  \cf3\f0\u10003?\cf0                                              \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9474?\f1    \bullet  SSH-browser     :  \cf3\f0\u10003?\cf0                                              \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9474?\f1    \bullet  X11-forwarding  :  \cf6\f0\u10007?\cf0   (disabled or not supported by server)      \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9474?                                                                      \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9474? \u11166? For more info, ctrl+click on \cf7\ul help\cf0\ulnone  or visit our \cf7\ul website\cf0\ulnone .            \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?\cf1\highlight2 
+\par 
+\par \cf0\highlight0    ,     #_\cf1\highlight2 
+\par \cf0\highlight0    ~\\_  ####_        Amazon Linux 2023\cf1\highlight2 
+\par \cf0\highlight0   ~~  \\_#####\\\cf1\highlight2 
+\par \cf0\highlight0   ~~     \\###|\cf1\highlight2 
+\par \cf0\highlight0   ~~       \\#/ ___   https://aws.amazon.com/linux/amazon-linux-2023\cf1\highlight2 
+\par \cf0\highlight0    ~~       V~' '->\cf1\highlight2 
+\par \cf0\highlight0     ~~~         /\cf1\highlight2 
+\par \cf0\highlight0       ~~._.   _/\cf1\highlight2 
+\par \cf0\highlight0          _/ _/\cf1\highlight2 
+\par \cf0\highlight0        _/m/'\cf1\highlight2 
+\par \cf0\highlight0 [ec2-user@ip-172-31-18-237 ~]$ sudo yum install python-pip -y\cf1\highlight2 
+\par \cf0\highlight0 Last metadata expiration check: 0:02:46 ago on Sat Jun  1 14:40:05 2024.\cf1\highlight2 
+\par \cf0\highlight0 Dependencies resolved.\cf1\highlight2 
+\par \cf0\highlight0 ====================================================================================================\cf1\highlight2 
+\par \cf0\highlight0  Package                  Architecture   Version                          Repository           Size\cf1\highlight2 
+\par \cf0\highlight0 ====================================================================================================\cf1\highlight2 
+\par \cf0\highlight0 Installing:\cf1\highlight2 
+\par \cf0\highlight0  \cf3 python3-pip             \cf0  noarch         21.3.1-2.amzn2023.0.7            amazonlinux         1.8 M\cf1\highlight2 
+\par \cf0\highlight0 Installing weak dependencies:\cf1\highlight2 
+\par \cf0\highlight0  \cf3 libxcrypt-compat        \cf0  x86_64         4.4.33-7.amzn2023                amazonlinux          92 k\cf1\highlight2 
+\par 
+\par \cf0\highlight0 Transaction Summary\cf1\highlight2 
+\par \cf0\highlight0 ====================================================================================================\cf1\highlight2 
+\par \cf0\highlight0 Install  2 Packages\cf1\highlight2 
+\par 
+\par \cf0\highlight0 Total download size: 1.9 M\cf1\highlight2 
+\par \cf0\highlight0 Installed size: 11 M\cf1\highlight2 
+\par \cf0\highlight0 Downloading Packages:\cf1\highlight2 
+\par \cf0\highlight0 (1/2): libxcrypt-compat-4.4.33-7.amzn2023.x86_64.rpm                1.5 MB/s |  92 kB     00:00\cf1\highlight2 
+\par \cf0\highlight0 (2/2): python3-pip-21.3.1-2.amzn2023.0.7.noarch.rpm                  18 MB/s | 1.8 MB     00:00\cf1\highlight2 
+\par \cf0\highlight0 ----------------------------------------------------------------------------------------------------\cf1\highlight2 
+\par \cf0\highlight0 Total                                                                11 MB/s | 1.9 MB     00:00\cf1\highlight2 
+\par \cf0\highlight0 Running transaction check\cf1\highlight2 
+\par \cf0\highlight0 Transaction check succeeded.\cf1\highlight2 
+\par \cf0\highlight0 Running transaction test\cf1\highlight2 
+\par \cf0\highlight0 Transaction test succeeded.\cf1\highlight2 
+\par \cf0\highlight0 Running transaction\cf1\highlight2 
+\par \cf0\highlight0   Preparing        :                                                                            1/1\cf1\highlight2 
+\par \cf0\highlight0   Installing       : libxcrypt-compat-4.4.33-7.amzn2023.x86_64                                  1/2\cf1\highlight2 
+\par \cf0\highlight0   Installing       : python3-pip-21.3.1-2.amzn2023.0.7.noarch                                   2/2\cf1\highlight2 
+\par \cf0\highlight0   Running scriptlet: python3-pip-21.3.1-2.amzn2023.0.7.noarch                                   2/2\cf1\highlight2 
+\par \cf0\highlight0   Verifying        : libxcrypt-compat-4.4.33-7.amzn2023.x86_64                                  1/2\cf1\highlight2 
+\par \cf0\highlight0   Verifying        : python3-pip-21.3.1-2.amzn2023.0.7.noarch                                   2/2\cf1\highlight2 
+\par 
+\par \cf0\highlight0 Installed:\cf1\highlight2 
+\par \cf0\highlight0   libxcrypt-compat-4.4.33-7.amzn2023.x86_64         python3-pip-21.3.1-2.amzn2023.0.7.noarch\cf1\highlight2 
+\par 
+\par \cf0\highlight0 Complete!\cf1\highlight2 
+\par \cf0\highlight0 [ec2-user@ip-172-31-18-237 ~]$ sudo pip install ansible\cf1\highlight2 
+\par \cf0\highlight0 Collecting ansible\cf1\highlight2 
+\par \cf0\highlight0   Downloading ansible-8.7.0-py3-none-any.whl (48.4 MB)\cf1\highlight2 
+\par \cf0\highlight0      |\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?| 48.4 MB 461 kB/s\cf1\highlight2 
+\par \cf0\highlight0 Collecting ansible-core~=2.15.7\cf1\highlight2 
+\par \cf0\highlight0   Downloading ansible_core-2.15.12-py3-none-any.whl (2.3 MB)\cf1\highlight2 
+\par \cf0\highlight0      |\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?| 2.3 MB 22.8 MB/s\cf1\highlight2 
+\par \cf0\highlight0 Collecting importlib-resources<5.1,>=5.0\cf1\highlight2 
+\par \cf0\highlight0   Downloading importlib_resources-5.0.7-py3-none-any.whl (24 kB)\cf1\highlight2 
+\par \cf0\highlight0 Collecting jinja2>=3.0.0\cf1\highlight2 
+\par \cf0\highlight0   Downloading jinja2-3.1.4-py3-none-any.whl (133 kB)\cf1\highlight2 
+\par \cf0\highlight0      |\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?| 133 kB 41.5 MB/s\cf1\highlight2 
+\par \cf0\highlight0 Requirement already satisfied: PyYAML>=5.1 in /usr/lib64/python3.9/site-packages (from ansible-core~=2.15.7->ansible) (5.4.1)\cf1\highlight2 
+\par \cf0\highlight0 Collecting packaging\cf1\highlight2 
+\par \cf0\highlight0   Downloading packaging-24.0-py3-none-any.whl (53 kB)\cf1\highlight2 
+\par \cf0\highlight0      |\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?\u9608?| 53 kB 4.0 MB/s\cf1\highlight2 
+\par \cf0\highlight0 Collecting resolvelib<1.1.0,>=0.5.3\cf1\highlight2 
+\par \cf0\highlight0   Downloading resolvelib-1.0.1-py2.py3-none-any.whl (17 kB)\cf1\highlight2 
+\par \cf0\highlight0 Requirement already satisfied: cryptography in /usr/lib64/python3.9/site-packages (from ansible-core~=2.15.7->ansible) (36.0.1)\cf1\highlight2 
+\par \cf0\highlight0 Collecting MarkupSafe>=2.0\cf1\highlight2 
+\par \cf0\highlight0   Downloading MarkupSafe-2.1.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)\cf1\highlight2 
+\par \cf0\highlight0 Requirement already satisfied: cffi>=1.12 in /usr/lib64/python3.9/site-packages (from cryptography->ansible-core~=2.15.7->ansible) (1.14.5)\cf1\highlight2 
+\par \cf0\highlight0 Requirement already satisfied: pycparser in /usr/lib/python3.9/site-packages (from cffi>=1.12->cryptography->ansible-core~=2.15.7->ansible) (2.20)\cf1\highlight2 
+\par \cf0\highlight0 Requirement already satisfied: ply==3.11 in /usr/lib/python3.9/site-packages (from pycparser->cffi>=1.12->cryptography->ansible-core~=2.15.7->ansible) (3.11)\cf1\highlight2 
+\par \cf0\highlight0 Installing collected packages: MarkupSafe, resolvelib, packaging, jinja2, importlib-resources, ansible-core, ansible\cf1\highlight2 
+\par \cf0\highlight0   Attempting uninstall: MarkupSafe\cf1\highlight2 
+\par \cf0\highlight0     Found existing installation: MarkupSafe 1.1.1\cf1\highlight2 
+\par \cf0\highlight0     Uninstalling MarkupSafe-1.1.1:\cf1\highlight2 
+\par \cf0\highlight0       Successfully uninstalled MarkupSafe-1.1.1\cf1\highlight2 
+\par \cf0\highlight0   Attempting uninstall: jinja2\cf1\highlight2 
+\par \cf0\highlight0     Found existing installation: Jinja2 2.11.3\cf1\highlight2 
+\par \cf0\highlight0     Uninstalling Jinja2-2.11.3:\cf1\highlight2 
+\par \cf0\highlight0       Successfully uninstalled Jinja2-2.11.3\cf1\highlight2 
+\par \cf0\highlight0 ^[[BSuccessfully installed MarkupSafe-2.1.5 ansible-8.7.0 ansible-core-2.15.12 importlib-resources-5.0.7 jinja2-3.1.4 packaging-24.0 resolvelib-1.0.1\cf1\highlight2 
+\par \cf8\highlight0 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv\cf1\highlight2 
+\par \cf0\highlight0 [ec2-user@ip-172-31-18-237 ~]$ ansible --version\cf1\highlight2 
+\par \cf0\highlight0 ansible [core 2.15.12]\cf1\highlight2 
+\par \cf0\highlight0   config file = None\cf1\highlight2 
+\par \cf0\highlight0   configured module search path = ['/home/ec2-user/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']\cf1\highlight2 
+\par \cf0\highlight0   ansible python module location = /usr/local/lib/python3.9/site-packages/ansible\cf1\highlight2 
+\par \cf0\highlight0   ansible collection location = /home/ec2-user/.ansible/collections:/usr/share/ansible/collections\cf1\highlight2 
+\par \cf0\highlight0   executable location = /usr/local/bin/ansible\cf1\highlight2 
+\par \cf0\highlight0   python version = 3.9.16 (main, Apr 24 2024, 00:00:00) [GCC 11.4.1 20230605 (Red Hat 11.4.1-2)] (/usr/bin/python3)\cf1\highlight2 
+\par \cf0\highlight0   jinja version = 3.1.4\cf1\highlight2 
+\par \cf0\highlight0   libyaml = True\cf1\highlight2 
+\par \cf0\highlight0 [ec2-user@ip-172-31-18-237 ~]$ vi slave.txt\cf1\highlight2 
+\par \cf0\highlight0 [ec2-user@ip-172-31-18-237 ~]$ vi ansible.cfg\cf1\highlight2 
+\par \cf0\highlight0 [ec2-user@ip-172-31-18-237 ~]$ vi ansible.cfg\cf1\highlight2 
+\par \cf0\highlight0 [ec2-user@ip-172-31-18-237 ~]$ ansible all -i slave.txt -m ping\cf1\highlight2 
+\par \cf9\highlight0 18.141.177.170 | UNREACHABLE! => \{\cf1\highlight2 
+\par \cf9\highlight0     "changed": false,\cf1\highlight2 
+\par \cf9\highlight0     "msg": "Failed to connect to the host via ssh: Warning: Permanently added '18.141.177.170' (ED25519) to the list of known hosts.\\r\\nec2-user@18.141.177.170: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).",\cf1\highlight2 
+\par \cf9\highlight0     "unreachable": true\cf1\highlight2 
+\par \cf9\highlight0\}\cf1\highlight2 
+\par \cf0\highlight0 [ec2-user@ip-172-31-18-237 ~]$ ansible all -i slave.txt -m ping\cf1\highlight2 
+\par \cf9\highlight0 18.141.177.170 | UNREACHABLE! => \{\cf1\highlight2 
+\par \cf9\highlight0     "changed": false,\cf1\highlight2 
+\par \cf9\highlight0     "msg": "Failed to connect to the host via ssh: ec2-user@18.141.177.170: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).",\cf1\highlight2 
+\par \cf9\highlight0     "unreachable": true\cf1\highlight2 
+\par \cf9\highlight0\}\cf1\highlight2 
+\par \cf0\highlight0 [ec2-user@ip-172-31-18-237 ~]$ ansible all -i slave.txt -m ping\cf1\highlight2 
+\par \cf10\highlight0 [WARNING]: Platform linux on host 18.141.177.170 is using the discovered Python interpreter at\cf1\highlight2 
+\par \cf10\highlight0 /usr/bin/python3.9, but future installation of another Python interpreter could change the meaning\cf1\highlight2 
+\par \cf10\highlight0 of that path. See https://docs.ansible.com/ansible-\cf1\highlight2 
+\par \cf10\highlight0 core/2.15/reference_appendices/interpreter_discovery.html for more information.\cf1\highlight2 
+\par \cf11\highlight0 18.141.177.170 | SUCCESS => \{\cf1\highlight2 
+\par \cf11\highlight0     "ansible_facts": \{\cf1\highlight2 
+\par \cf11\highlight0         "discovered_interpreter_python": "/usr/bin/python3.9"\cf1\highlight2 
+\par \cf11\highlight0     \},\cf1\highlight2 
+\par \cf11\highlight0     "changed": false,\cf1\highlight2 
+\par \cf11\highlight0     "ping": "pong"\cf1\highlight2 
+\par \cf11\highlight0\}\cf1\highlight2 
+\par \cf0\highlight0 [ec2-user@ip-172-31-18-237 ~]$ ansible india -i slave.txt -m yum -a "name=httpd state=latest" -b\cf1\highlight2 
+\par \cf10\highlight0 [WARNING]: Platform linux on host 18.141.177.170 is using the discovered Python interpreter at\cf1\highlight2 
+\par \cf10\highlight0 /usr/bin/python3.9, but future installation of another Python interpreter could change the meaning\cf1\highlight2 
+\par \cf10\highlight0 of that path. See https://docs.ansible.com/ansible-\cf1\highlight2 
+\par \cf10\highlight0 core/2.15/reference_appendices/interpreter_discovery.html for more information.\cf1\highlight2 
+\par \cf8\highlight0 18.141.177.170 | CHANGED => \{\cf1\highlight2 
+\par \cf8\highlight0     "ansible_facts": \{\cf1\highlight2 
+\par \cf8\highlight0         "discovered_interpreter_python": "/usr/bin/python3.9"\cf1\highlight2 
+\par \cf8\highlight0     \},\cf1\highlight2 
+\par \cf8\highlight0     "changed": true,\cf1\highlight2 
+\par \cf8\highlight0     "msg": "",\cf1\highlight2 
+\par \cf8\highlight0     "rc": 0,\cf1\highlight2 
+\par \cf8\highlight0     "results": [\cf1\highlight2 
+\par \cf8\highlight0         "Installed: httpd-2.4.59-2.amzn2023.x86_64",\cf1\highlight2 
+\par \cf8\highlight0         "Installed: generic-logos-httpd-18.0.0-12.amzn2023.0.3.noarch",\cf1\highlight2 
+\par \cf8\highlight0         "Installed: httpd-core-2.4.59-2.amzn2023.x86_64",\cf1\highlight2 
+\par \cf8\highlight0         "Installed: apr-1.7.2-2.amzn2023.0.2.x86_64",\cf1\highlight2 
+\par \cf8\highlight0         "Installed: mailcap-2.1.49-3.amzn2023.0.3.noarch",\cf1\highlight2 
+\par \cf8\highlight0         "Installed: apr-util-1.6.3-1.amzn2023.0.1.x86_64",\cf1\highlight2 
+\par \cf8\highlight0         "Installed: httpd-filesystem-2.4.59-2.amzn2023.noarch",\cf1\highlight2 
+\par \cf8\highlight0         "Installed: libbrotli-1.0.9-4.amzn2023.0.2.x86_64",\cf1\highlight2 
+\par \cf8\highlight0         "Installed: mod_http2-2.0.27-1.amzn2023.0.2.x86_64",\cf1\highlight2 
+\par \cf8\highlight0         "Installed: apr-util-openssl-1.6.3-1.amzn2023.0.1.x86_64",\cf1\highlight2 
+\par \cf8\highlight0         "Installed: httpd-tools-2.4.59-2.amzn2023.x86_64",\cf1\highlight2 
+\par \cf8\highlight0         "Installed: mod_lua-2.4.59-2.amzn2023.x86_64"\cf1\highlight2 
+\par \cf8\highlight0     ]\cf1\highlight2 
+\par \cf8\highlight0\}\cf1\highlight2 
+\par \cf0\highlight0 [ec2-user@ip-172-31-18-237 ~]$ ansible india -i slave.txt -m service -a "name=httpd state=started" -b\cf1\highlight2 
+\par \cf10\highlight0 [WARNING]: Platform linux on host 18.141.177.170 is using the discovered Python interpreter at\cf1\highlight2 
+\par \cf10\highlight0 /usr/bin/python3.9, but future installation of another Python interpreter could change the meaning\cf1\highlight2 
+\par \cf10\highlight0 of that path. See https://docs.ansible.com/ansible-\cf1\highlight2 
+\par \cf10\highlight0 core/2.15/reference_appendices/interpreter_discovery.html for more information.\cf1\highlight2 
+\par \cf8\highlight0 18.141.177.170 | CHANGED => \{\cf1\highlight2 
+\par \cf8\highlight0     "ansible_facts": \{\cf1\highlight2 
+\par \cf8\highlight0         "discovered_interpreter_python": "/usr/bin/python3.9"\cf1\highlight2 
+\par \cf8\highlight0     \},\cf1\highlight2 
+\par \cf8\highlight0     "changed": true,\cf1\highlight2 
+\par \cf8\highlight0     "name": "httpd",\cf1\highlight2 
+\par \cf8\highlight0     "state": "started",\cf1\highlight2 
+\par \cf8\highlight0     "status": \{\cf1\highlight2 
+\par \cf8\highlight0         "AccessSELinuxContext": "system_u:object_r:httpd_unit_file_t:s0",\cf1\highlight2 
+\par \cf8\highlight0         "ActiveEnterTimestampMonotonic": "0",\cf1\highlight2 
+\par \cf8\highlight0         "ActiveExitTimestampMonotonic": "0",\cf1\highlight2 
+\par \cf8\highlight0         "ActiveState": "inactive",\cf1\highlight2 
+\par \cf8\highlight0         "After": "httpd-init.service nss-lookup.target -.mount basic.target systemd-journald.socket network.target systemd-tmpfiles-setup.service tmp.mount sysinit.target system.slice remote-fs.target",\cf1\highlight2 
+\par \cf8\highlight0         "AllowIsolate": "no",\cf1\highlight2 
+\par \cf8\highlight0         "AssertResult": "no",\cf1\highlight2 
+\par \cf8\highlight0         "AssertTimestampMonotonic": "0",\cf1\highlight2 
+\par \cf8\highlight0         "Before": "shutdown.target",\cf1\highlight2 
+\par \cf8\highlight0         "BlockIOAccounting": "no",\cf1\highlight2 
+\par \cf8\highlight0         "BlockIOWeight": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "CPUAccounting": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "CPUAffinityFromNUMA": "no",\cf1\highlight2 
+\par \cf8\highlight0         "CPUQuotaPerSecUSec": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "CPUQuotaPeriodUSec": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "CPUSchedulingPolicy": "0",\cf1\highlight2 
+\par \cf8\highlight0         "CPUSchedulingPriority": "0",\cf1\highlight2 
+\par \cf8\highlight0         "CPUSchedulingResetOnFork": "no",\cf1\highlight2 
+\par \cf8\highlight0         "CPUShares": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "CPUUsageNSec": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "CPUWeight": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "CacheDirectoryMode": "0755",\cf1\highlight2 
+\par \cf8\highlight0         "CanFreeze": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "CanIsolate": "no",\cf1\highlight2 
+\par \cf8\highlight0         "CanReload": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "CanStart": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "CanStop": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "CapabilityBoundingSet": "cap_chown cap_dac_override cap_dac_read_search cap_fowner cap_fsetid cap_kill cap_setgid cap_setuid cap_setpcap cap_linux_immutable cap_net_bind_service cap_net_broadcast cap_net_admin cap_net_raw cap_ipc_lock cap_ipc_owner cap_sys_module cap_sys_rawio cap_sys_chroot cap_sys_ptrace cap_sys_pacct cap_sys_admin cap_sys_boot cap_sys_nice cap_sys_resource cap_sys_time cap_sys_tty_config cap_mknod cap_lease cap_audit_write cap_audit_control cap_setfcap cap_mac_override cap_mac_admin cap_syslog cap_wake_alarm cap_block_suspend cap_audit_read cap_perfmon cap_bpf cap_checkpoint_restore",\cf1\highlight2 
+\par \cf8\highlight0         "CleanResult": "success",\cf1\highlight2 
+\par \cf8\highlight0         "CollectMode": "inactive",\cf1\highlight2 
+\par \cf8\highlight0         "ConditionResult": "no",\cf1\highlight2 
+\par \cf8\highlight0         "ConditionTimestampMonotonic": "0",\cf1\highlight2 
+\par \cf8\highlight0         "ConfigurationDirectoryMode": "0755",\cf1\highlight2 
+\par \cf8\highlight0         "Conflicts": "shutdown.target",\cf1\highlight2 
+\par \cf8\highlight0         "ControlGroupId": "0",\cf1\highlight2 
+\par \cf8\highlight0         "ControlPID": "0",\cf1\highlight2 
+\par \cf8\highlight0         "CoredumpFilter": "0x33",\cf1\highlight2 
+\par \cf8\highlight0         "DefaultDependencies": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "DefaultMemoryLow": "0",\cf1\highlight2 
+\par \cf8\highlight0         "DefaultMemoryMin": "0",\cf1\highlight2 
+\par \cf8\highlight0         "Delegate": "no",\cf1\highlight2 
+\par \cf8\highlight0         "Description": "The Apache HTTP Server",\cf1\highlight2 
+\par \cf8\highlight0         "DevicePolicy": "auto",\cf1\highlight2 
+\par \cf8\highlight0         "Documentation": "\\"man:httpd.service(8)\\"",\cf1\highlight2 
+\par \cf8\highlight0         "DynamicUser": "no",\cf1\highlight2 
+\par \cf8\highlight0         "Environment": "LANG=C",\cf1\highlight2 
+\par \cf8\highlight0         "ExecMainCode": "0",\cf1\highlight2 
+\par \cf8\highlight0         "ExecMainExitTimestampMonotonic": "0",\cf1\highlight2 
+\par \cf8\highlight0         "ExecMainPID": "0",\cf1\highlight2 
+\par \cf8\highlight0         "ExecMainStartTimestampMonotonic": "0",\cf1\highlight2 
+\par \cf8\highlight0         "ExecMainStatus": "0",\cf1\highlight2 
+\par \cf8\highlight0         "ExecReload": "\{ path=/usr/sbin/httpd ; argv[]=/usr/sbin/httpd $OPTIONS -k graceful ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 \}",\cf1\highlight2 
+\par \cf8\highlight0         "ExecReloadEx": "\{ path=/usr/sbin/httpd ; argv[]=/usr/sbin/httpd $OPTIONS -k graceful ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 \}",\cf1\highlight2 
+\par \cf8\highlight0         "ExecStart": "\{ path=/usr/sbin/httpd ; argv[]=/usr/sbin/httpd $OPTIONS -DFOREGROUND ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 \}",\cf1\highlight2 
+\par \cf8\highlight0         "ExecStartEx": "\{ path=/usr/sbin/httpd ; argv[]=/usr/sbin/httpd $OPTIONS -DFOREGROUND ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 \}",\cf1\highlight2 
+\par \cf8\highlight0         "ExitType": "main",\cf1\highlight2 
+\par \cf8\highlight0         "FailureAction": "none",\cf1\highlight2 
+\par \cf8\highlight0         "FileDescriptorStoreMax": "0",\cf1\highlight2 
+\par \cf8\highlight0         "FinalKillSignal": "9",\cf1\highlight2 
+\par \cf8\highlight0         "FragmentPath": "/usr/lib/systemd/system/httpd.service",\cf1\highlight2 
+\par \cf8\highlight0         "FreezerState": "running",\cf1\highlight2 
+\par \cf8\highlight0         "GID": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "GuessMainPID": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "IOAccounting": "no",\cf1\highlight2 
+\par \cf8\highlight0         "IOReadBytes": "18446744073709551615",\cf1\highlight2 
+\par \cf8\highlight0         "IOReadOperations": "18446744073709551615",\cf1\highlight2 
+\par \cf8\highlight0         "IOSchedulingClass": "2",\cf1\highlight2 
+\par \cf8\highlight0         "IOSchedulingPriority": "4",\cf1\highlight2 
+\par \cf8\highlight0         "IOWeight": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "IOWriteBytes": "18446744073709551615",\cf1\highlight2 
+\par \cf8\highlight0         "IOWriteOperations": "18446744073709551615",\cf1\highlight2 
+\par \cf8\highlight0         "IPAccounting": "no",\cf1\highlight2 
+\par \cf8\highlight0         "IPEgressBytes": "[no data]",\cf1\highlight2 
+\par \cf8\highlight0         "IPEgressPackets": "[no data]",\cf1\highlight2 
+\par \cf8\highlight0         "IPIngressBytes": "[no data]",\cf1\highlight2 
+\par \cf8\highlight0         "IPIngressPackets": "[no data]",\cf1\highlight2 
+\par \cf8\highlight0         "Id": "httpd.service",\cf1\highlight2 
+\par \cf8\highlight0         "IgnoreOnIsolate": "no",\cf1\highlight2 
+\par \cf8\highlight0         "IgnoreSIGPIPE": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "InactiveEnterTimestampMonotonic": "0",\cf1\highlight2 
+\par \cf8\highlight0         "InactiveExitTimestampMonotonic": "0",\cf1\highlight2 
+\par \cf8\highlight0         "JobRunningTimeoutUSec": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "JobTimeoutAction": "none",\cf1\highlight2 
+\par \cf8\highlight0         "JobTimeoutUSec": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "KeyringMode": "private",\cf1\highlight2 
+\par \cf8\highlight0         "KillMode": "mixed",\cf1\highlight2 
+\par \cf8\highlight0         "KillSignal": "28",\cf1\highlight2 
+\par \cf8\highlight0         "LimitAS": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitASSoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitCORE": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitCORESoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitCPU": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitCPUSoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitDATA": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitDATASoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitFSIZE": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitFSIZESoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitLOCKS": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitLOCKSSoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitMEMLOCK": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitMEMLOCKSoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitMSGQUEUE": "819200",\cf1\highlight2 
+\par \cf8\highlight0         "LimitMSGQUEUESoft": "819200",\cf1\highlight2 
+\par \cf8\highlight0         "LimitNICE": "0",\cf1\highlight2 
+\par \cf8\highlight0         "LimitNICESoft": "0",\cf1\highlight2 
+\par \cf8\highlight0         "LimitNOFILE": "65535",\cf1\highlight2 
+\par \cf8\highlight0         "LimitNOFILESoft": "65535",\cf1\highlight2 
+\par \cf8\highlight0         "LimitNPROC": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitNPROCSoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitRSS": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitRSSSoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitRTPRIO": "0",\cf1\highlight2 
+\par \cf8\highlight0         "LimitRTPRIOSoft": "0",\cf1\highlight2 
+\par \cf8\highlight0         "LimitRTTIME": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitRTTIMESoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitSIGPENDING": "30446",\cf1\highlight2 
+\par \cf8\highlight0         "LimitSIGPENDINGSoft": "30446",\cf1\highlight2 
+\par \cf8\highlight0         "LimitSTACK": "10485760",\cf1\highlight2 
+\par \cf8\highlight0         "LimitSTACKSoft": "10485760",\cf1\highlight2 
+\par \cf8\highlight0         "LoadState": "loaded",\cf1\highlight2 
+\par \cf8\highlight0         "LockPersonality": "no",\cf1\highlight2 
+\par \cf8\highlight0         "LogLevelMax": "-1",\cf1\highlight2 
+\par \cf8\highlight0         "LogRateLimitBurst": "0",\cf1\highlight2 
+\par \cf8\highlight0         "LogRateLimitIntervalUSec": "0",\cf1\highlight2 
+\par \cf8\highlight0         "LogsDirectoryMode": "0755",\cf1\highlight2 
+\par \cf8\highlight0         "MainPID": "0",\cf1\highlight2 
+\par \cf8\highlight0         "ManagedOOMMemoryPressure": "auto",\cf1\highlight2 
+\par \cf8\highlight0         "ManagedOOMMemoryPressureLimit": "0",\cf1\highlight2 
+\par \cf8\highlight0         "ManagedOOMPreference": "none",\cf1\highlight2 
+\par \cf8\highlight0         "ManagedOOMSwap": "auto",\cf1\highlight2 
+\par \cf8\highlight0         "MemoryAccounting": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "MemoryAvailable": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "MemoryCurrent": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "MemoryDenyWriteExecute": "no",\cf1\highlight2 
+\par \cf8\highlight0         "MemoryHigh": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "MemoryLimit": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "MemoryLow": "0",\cf1\highlight2 
+\par \cf8\highlight0         "MemoryMax": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "MemoryMin": "0",\cf1\highlight2 
+\par \cf8\highlight0         "MemorySwapMax": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "MountAPIVFS": "no",\cf1\highlight2 
+\par \cf8\highlight0         "NFileDescriptorStore": "0",\cf1\highlight2 
+\par \cf8\highlight0         "NRestarts": "0",\cf1\highlight2 
+\par \cf8\highlight0         "NUMAPolicy": "n/a",\cf1\highlight2 
+\par \cf8\highlight0         "Names": "httpd.service",\cf1\highlight2 
+\par \cf8\highlight0         "NeedDaemonReload": "no",\cf1\highlight2 
+\par \cf8\highlight0         "Nice": "0",\cf1\highlight2 
+\par \cf8\highlight0         "NoNewPrivileges": "no",\cf1\highlight2 
+\par \cf8\highlight0         "NonBlocking": "no",\cf1\highlight2 
+\par \cf8\highlight0         "NotifyAccess": "main",\cf1\highlight2 
+\par \cf8\highlight0         "OOMPolicy": "continue",\cf1\highlight2 
+\par \cf8\highlight0         "OOMScoreAdjust": "0",\cf1\highlight2 
+\par \cf8\highlight0         "OnFailureJobMode": "replace",\cf1\highlight2 
+\par \cf8\highlight0         "OnSuccessJobMode": "fail",\cf1\highlight2 
+\par \cf8\highlight0         "Perpetual": "no",\cf1\highlight2 
+\par \cf8\highlight0         "PrivateDevices": "no",\cf1\highlight2 
+\par \cf8\highlight0         "PrivateIPC": "no",\cf1\highlight2 
+\par \cf8\highlight0         "PrivateMounts": "no",\cf1\highlight2 
+\par \cf8\highlight0         "PrivateNetwork": "no",\cf1\highlight2 
+\par \cf8\highlight0         "PrivateTmp": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "PrivateUsers": "no",\cf1\highlight2 
+\par \cf8\highlight0         "ProcSubset": "all",\cf1\highlight2 
+\par \cf8\highlight0         "ProtectClock": "no",\cf1\highlight2 
+\par \cf8\highlight0         "ProtectControlGroups": "no",\cf1\highlight2 
+\par \cf8\highlight0         "ProtectHome": "no",\cf1\highlight2 
+\par \cf8\highlight0         "ProtectHostname": "no",\cf1\highlight2 
+\par \cf8\highlight0         "ProtectKernelLogs": "no",\cf1\highlight2 
+\par \cf8\highlight0         "ProtectKernelModules": "no",\cf1\highlight2 
+\par \cf8\highlight0         "ProtectKernelTunables": "no",\cf1\highlight2 
+\par \cf8\highlight0         "ProtectProc": "default",\cf1\highlight2 
+\par \cf8\highlight0         "ProtectSystem": "no",\cf1\highlight2 
+\par \cf8\highlight0         "RefuseManualStart": "no",\cf1\highlight2 
+\par \cf8\highlight0         "RefuseManualStop": "no",\cf1\highlight2 
+\par \cf8\highlight0         "ReloadResult": "success",\cf1\highlight2 
+\par \cf8\highlight0         "RemainAfterExit": "no",\cf1\highlight2 
+\par \cf8\highlight0         "RemoveIPC": "no",\cf1\highlight2 
+\par \cf8\highlight0         "Requires": "system.slice sysinit.target -.mount",\cf1\highlight2 
+\par \cf8\highlight0         "RequiresMountsFor": "/var/tmp",\cf1\highlight2 
+\par \cf8\highlight0         "Restart": "no",\cf1\highlight2 
+\par \cf8\highlight0         "RestartKillSignal": "28",\cf1\highlight2 
+\par \cf8\highlight0         "RestartUSec": "100ms",\cf1\highlight2 
+\par \cf8\highlight0         "RestrictNamespaces": "no",\cf1\highlight2 
+\par \cf8\highlight0         "RestrictRealtime": "no",\cf1\highlight2 
+\par \cf8\highlight0         "RestrictSUIDSGID": "no",\cf1\highlight2 
+\par \cf8\highlight0         "Result": "success",\cf1\highlight2 
+\par \cf8\highlight0         "RootDirectoryStartOnly": "no",\cf1\highlight2 
+\par \cf8\highlight0         "RuntimeDirectoryMode": "0755",\cf1\highlight2 
+\par \cf8\highlight0         "RuntimeDirectoryPreserve": "no",\cf1\highlight2 
+\par \cf8\highlight0         "RuntimeMaxUSec": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "RuntimeRandomizedExtraUSec": "0",\cf1\highlight2 
+\par \cf8\highlight0         "SameProcessGroup": "no",\cf1\highlight2 
+\par \cf8\highlight0         "SecureBits": "0",\cf1\highlight2 
+\par \cf8\highlight0         "SendSIGHUP": "no",\cf1\highlight2 
+\par \cf8\highlight0         "SendSIGKILL": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "Slice": "system.slice",\cf1\highlight2 
+\par \cf8\highlight0         "StandardError": "inherit",\cf1\highlight2 
+\par \cf8\highlight0         "StandardInput": "null",\cf1\highlight2 
+\par \cf8\highlight0         "StandardOutput": "journal",\cf1\highlight2 
+\par \cf8\highlight0         "StartLimitAction": "none",\cf1\highlight2 
+\par \cf8\highlight0         "StartLimitBurst": "5",\cf1\highlight2 
+\par \cf8\highlight0         "StartLimitIntervalUSec": "10s",\cf1\highlight2 
+\par \cf8\highlight0         "StartupBlockIOWeight": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "StartupCPUShares": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "StartupCPUWeight": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "StartupIOWeight": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "StateChangeTimestampMonotonic": "0",\cf1\highlight2 
+\par \cf8\highlight0         "StateDirectoryMode": "0755",\cf1\highlight2 
+\par \cf8\highlight0         "StatusErrno": "0",\cf1\highlight2 
+\par \cf8\highlight0         "StopWhenUnneeded": "no",\cf1\highlight2 
+\par \cf8\highlight0         "SubState": "dead",\cf1\highlight2 
+\par \cf8\highlight0         "SuccessAction": "none",\cf1\highlight2 
+\par \cf8\highlight0         "SyslogFacility": "3",\cf1\highlight2 
+\par \cf8\highlight0         "SyslogLevel": "6",\cf1\highlight2 
+\par \cf8\highlight0         "SyslogLevelPrefix": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "SyslogPriority": "30",\cf1\highlight2 
+\par \cf8\highlight0         "SystemCallErrorNumber": "2147483646",\cf1\highlight2 
+\par \cf8\highlight0         "TTYReset": "no",\cf1\highlight2 
+\par \cf8\highlight0         "TTYVHangup": "no",\cf1\highlight2 
+\par \cf8\highlight0         "TTYVTDisallocate": "no",\cf1\highlight2 
+\par \cf8\highlight0         "TasksAccounting": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "TasksCurrent": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "TasksMax": "1114",\cf1\highlight2 
+\par \cf8\highlight0         "TimeoutAbortUSec": "1min 30s",\cf1\highlight2 
+\par \cf8\highlight0         "TimeoutCleanUSec": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "TimeoutStartFailureMode": "terminate",\cf1\highlight2 
+\par \cf8\highlight0         "TimeoutStartUSec": "1min 30s",\cf1\highlight2 
+\par \cf8\highlight0         "TimeoutStopFailureMode": "terminate",\cf1\highlight2 
+\par \cf8\highlight0         "TimeoutStopUSec": "1min 30s",\cf1\highlight2 
+\par \cf8\highlight0         "TimerSlackNSec": "50000",\cf1\highlight2 
+\par \cf8\highlight0         "Transient": "no",\cf1\highlight2 
+\par \cf8\highlight0         "Type": "notify",\cf1\highlight2 
+\par \cf8\highlight0         "UID": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "UMask": "0022",\cf1\highlight2 
+\par \cf8\highlight0         "UnitFilePreset": "disabled",\cf1\highlight2 
+\par \cf8\highlight0         "UnitFileState": "disabled",\cf1\highlight2 
+\par \cf8\highlight0         "UtmpMode": "init",\cf1\highlight2 
+\par \cf8\highlight0         "Wants": "tmp.mount httpd-init.service",\cf1\highlight2 
+\par \cf8\highlight0         "WatchdogSignal": "6",\cf1\highlight2 
+\par \cf8\highlight0         "WatchdogTimestampMonotonic": "0",\cf1\highlight2 
+\par \cf8\highlight0         "WatchdogUSec": "infinity"\cf1\highlight2 
+\par \cf8\highlight0     \}\cf1\highlight2 
+\par \cf8\highlight0\}\cf1\highlight2 
+\par \cf0\highlight0 [ec2-user@ip-172-31-18-237 ~]$ ansible india -i slave.txt -m service -a "name=httpd state=stopped" -b\cf1\highlight2 
+\par \cf10\highlight0 [WARNING]: Platform linux on host 18.141.177.170 is using the discovered Python interpreter at\cf1\highlight2 
+\par \cf10\highlight0 /usr/bin/python3.9, but future installation of another Python interpreter could change the meaning\cf1\highlight2 
+\par \cf10\highlight0 of that path. See https://docs.ansible.com/ansible-\cf1\highlight2 
+\par \cf10\highlight0 core/2.15/reference_appendices/interpreter_discovery.html for more information.\cf1\highlight2 
+\par \cf8\highlight0 18.141.177.170 | CHANGED => \{\cf1\highlight2 
+\par \cf8\highlight0     "ansible_facts": \{\cf1\highlight2 
+\par \cf8\highlight0         "discovered_interpreter_python": "/usr/bin/python3.9"\cf1\highlight2 
+\par \cf8\highlight0     \},\cf1\highlight2 
+\par \cf8\highlight0     "changed": true,\cf1\highlight2 
+\par \cf8\highlight0     "name": "httpd",\cf1\highlight2 
+\par \cf8\highlight0     "state": "stopped",\cf1\highlight2 
+\par \cf8\highlight0     "status": \{\cf1\highlight2 
+\par \cf8\highlight0         "AccessSELinuxContext": "system_u:object_r:httpd_unit_file_t:s0",\cf1\highlight2 
+\par \cf8\highlight0         "ActiveEnterTimestamp": "Sat 2024-06-01 14:50:56 UTC",\cf1\highlight2 
+\par \cf8\highlight0         "ActiveEnterTimestampMonotonic": "335612667",\cf1\highlight2 
+\par \cf8\highlight0         "ActiveExitTimestampMonotonic": "0",\cf1\highlight2 
+\par \cf8\highlight0         "ActiveState": "active",\cf1\highlight2 
+\par \cf8\highlight0         "After": "-.mount systemd-tmpfiles-setup.service system.slice basic.target tmp.mount httpd-init.service nss-lookup.target remote-fs.target network.target systemd-journald.socket sysinit.target",\cf1\highlight2 
+\par \cf8\highlight0         "AllowIsolate": "no",\cf1\highlight2 
+\par \cf8\highlight0         "AssertResult": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "AssertTimestamp": "Sat 2024-06-01 14:50:56 UTC",\cf1\highlight2 
+\par \cf8\highlight0         "AssertTimestampMonotonic": "335539783",\cf1\highlight2 
+\par \cf8\highlight0         "Before": "shutdown.target",\cf1\highlight2 
+\par \cf8\highlight0         "BlockIOAccounting": "no",\cf1\highlight2 
+\par \cf8\highlight0         "BlockIOWeight": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "CPUAccounting": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "CPUAffinityFromNUMA": "no",\cf1\highlight2 
+\par \cf8\highlight0         "CPUQuotaPerSecUSec": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "CPUQuotaPeriodUSec": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "CPUSchedulingPolicy": "0",\cf1\highlight2 
+\par \cf8\highlight0         "CPUSchedulingPriority": "0",\cf1\highlight2 
+\par \cf8\highlight0         "CPUSchedulingResetOnFork": "no",\cf1\highlight2 
+\par \cf8\highlight0         "CPUShares": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "CPUUsageNSec": "79388000",\cf1\highlight2 
+\par \cf8\highlight0         "CPUWeight": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "CacheDirectoryMode": "0755",\cf1\highlight2 
+\par \cf8\highlight0         "CanFreeze": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "CanIsolate": "no",\cf1\highlight2 
+\par \cf8\highlight0         "CanReload": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "CanStart": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "CanStop": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "CapabilityBoundingSet": "cap_chown cap_dac_override cap_dac_read_search cap_fowner cap_fsetid cap_kill cap_setgid cap_setuid cap_setpcap cap_linux_immutable cap_net_bind_service cap_net_broadcast cap_net_admin cap_net_raw cap_ipc_lock cap_ipc_owner cap_sys_module cap_sys_rawio cap_sys_chroot cap_sys_ptrace cap_sys_pacct cap_sys_admin cap_sys_boot cap_sys_nice cap_sys_resource cap_sys_time cap_sys_tty_config cap_mknod cap_lease cap_audit_write cap_audit_control cap_setfcap cap_mac_override cap_mac_admin cap_syslog cap_wake_alarm cap_block_suspend cap_audit_read cap_perfmon cap_bpf cap_checkpoint_restore",\cf1\highlight2 
+\par \cf8\highlight0         "CleanResult": "success",\cf1\highlight2 
+\par \cf8\highlight0         "CollectMode": "inactive",\cf1\highlight2 
+\par \cf8\highlight0         "ConditionResult": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "ConditionTimestamp": "Sat 2024-06-01 14:50:56 UTC",\cf1\highlight2 
+\par \cf8\highlight0         "ConditionTimestampMonotonic": "335539779",\cf1\highlight2 
+\par \cf8\highlight0         "ConfigurationDirectoryMode": "0755",\cf1\highlight2 
+\par \cf8\highlight0         "Conflicts": "shutdown.target",\cf1\highlight2 
+\par \cf8\highlight0         "ControlGroup": "/system.slice/httpd.service",\cf1\highlight2 
+\par \cf8\highlight0         "ControlGroupId": "5103",\cf1\highlight2 
+\par \cf8\highlight0         "ControlPID": "0",\cf1\highlight2 
+\par \cf8\highlight0         "CoredumpFilter": "0x33",\cf1\highlight2 
+\par \cf8\highlight0         "DefaultDependencies": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "DefaultMemoryLow": "0",\cf1\highlight2 
+\par \cf8\highlight0         "DefaultMemoryMin": "0",\cf1\highlight2 
+\par \cf8\highlight0         "Delegate": "no",\cf1\highlight2 
+\par \cf8\highlight0         "Description": "The Apache HTTP Server",\cf1\highlight2 
+\par \cf8\highlight0         "DevicePolicy": "auto",\cf1\highlight2 
+\par \cf8\highlight0         "Documentation": "\\"man:httpd.service(8)\\"",\cf1\highlight2 
+\par \cf8\highlight0         "DynamicUser": "no",\cf1\highlight2 
+\par \cf8\highlight0         "Environment": "LANG=C",\cf1\highlight2 
+\par \cf8\highlight0         "ExecMainCode": "0",\cf1\highlight2 
+\par \cf8\highlight0         "ExecMainExitTimestampMonotonic": "0",\cf1\highlight2 
+\par \cf8\highlight0         "ExecMainPID": "26575",\cf1\highlight2 
+\par \cf8\highlight0         "ExecMainStartTimestamp": "Sat 2024-06-01 14:50:56 UTC",\cf1\highlight2 
+\par \cf8\highlight0         "ExecMainStartTimestampMonotonic": "335570066",\cf1\highlight2 
+\par \cf8\highlight0         "ExecMainStatus": "0",\cf1\highlight2 
+\par \cf8\highlight0         "ExecReload": "\{ path=/usr/sbin/httpd ; argv[]=/usr/sbin/httpd $OPTIONS -k graceful ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 \}",\cf1\highlight2 
+\par \cf8\highlight0         "ExecReloadEx": "\{ path=/usr/sbin/httpd ; argv[]=/usr/sbin/httpd $OPTIONS -k graceful ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 \}",\cf1\highlight2 
+\par \cf8\highlight0         "ExecStart": "\{ path=/usr/sbin/httpd ; argv[]=/usr/sbin/httpd $OPTIONS -DFOREGROUND ; ignore_errors=no ; start_time=[Sat 2024-06-01 14:50:56 UTC] ; stop_time=[n/a] ; pid=26575 ; code=(null) ; status=0/0 \}",\cf1\highlight2 
+\par \cf8\highlight0         "ExecStartEx": "\{ path=/usr/sbin/httpd ; argv[]=/usr/sbin/httpd $OPTIONS -DFOREGROUND ; flags= ; start_time=[Sat 2024-06-01 14:50:56 UTC] ; stop_time=[n/a] ; pid=26575 ; code=(null) ; status=0/0 \}",\cf1\highlight2 
+\par \cf8\highlight0         "ExitType": "main",\cf1\highlight2 
+\par \cf8\highlight0         "FailureAction": "none",\cf1\highlight2 
+\par \cf8\highlight0         "FileDescriptorStoreMax": "0",\cf1\highlight2 
+\par \cf8\highlight0         "FinalKillSignal": "9",\cf1\highlight2 
+\par \cf8\highlight0         "FragmentPath": "/usr/lib/systemd/system/httpd.service",\cf1\highlight2 
+\par \cf8\highlight0         "FreezerState": "running",\cf1\highlight2 
+\par \cf8\highlight0         "GID": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "GuessMainPID": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "IOAccounting": "no",\cf1\highlight2 
+\par \cf8\highlight0         "IOReadBytes": "18446744073709551615",\cf1\highlight2 
+\par \cf8\highlight0         "IOReadOperations": "18446744073709551615",\cf1\highlight2 
+\par \cf8\highlight0         "IOSchedulingClass": "2",\cf1\highlight2 
+\par \cf8\highlight0         "IOSchedulingPriority": "4",\cf1\highlight2 
+\par \cf8\highlight0         "IOWeight": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "IOWriteBytes": "18446744073709551615",\cf1\highlight2 
+\par \cf8\highlight0         "IOWriteOperations": "18446744073709551615",\cf1\highlight2 
+\par \cf8\highlight0         "IPAccounting": "no",\cf1\highlight2 
+\par \cf8\highlight0         "IPEgressBytes": "[no data]",\cf1\highlight2 
+\par \cf8\highlight0         "IPEgressPackets": "[no data]",\cf1\highlight2 
+\par \cf8\highlight0         "IPIngressBytes": "[no data]",\cf1\highlight2 
+\par \cf8\highlight0         "IPIngressPackets": "[no data]",\cf1\highlight2 
+\par \cf8\highlight0         "Id": "httpd.service",\cf1\highlight2 
+\par \cf8\highlight0         "IgnoreOnIsolate": "no",\cf1\highlight2 
+\par \cf8\highlight0         "IgnoreSIGPIPE": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "InactiveEnterTimestampMonotonic": "0",\cf1\highlight2 
+\par \cf8\highlight0         "InactiveExitTimestamp": "Sat 2024-06-01 14:50:56 UTC",\cf1\highlight2 
+\par \cf8\highlight0         "InactiveExitTimestampMonotonic": "335570389",\cf1\highlight2 
+\par \cf8\highlight0         "InvocationID": "df518182dc154ae0a6cc3e777a13984c",\cf1\highlight2 
+\par \cf8\highlight0         "JobRunningTimeoutUSec": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "JobTimeoutAction": "none",\cf1\highlight2 
+\par \cf8\highlight0         "JobTimeoutUSec": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "KeyringMode": "private",\cf1\highlight2 
+\par \cf8\highlight0         "KillMode": "mixed",\cf1\highlight2 
+\par \cf8\highlight0         "KillSignal": "28",\cf1\highlight2 
+\par \cf8\highlight0         "LimitAS": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitASSoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitCORE": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitCORESoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitCPU": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitCPUSoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitDATA": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitDATASoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitFSIZE": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitFSIZESoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitLOCKS": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitLOCKSSoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitMEMLOCK": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitMEMLOCKSoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitMSGQUEUE": "819200",\cf1\highlight2 
+\par \cf8\highlight0         "LimitMSGQUEUESoft": "819200",\cf1\highlight2 
+\par \cf8\highlight0         "LimitNICE": "0",\cf1\highlight2 
+\par \cf8\highlight0         "LimitNICESoft": "0",\cf1\highlight2 
+\par \cf8\highlight0         "LimitNOFILE": "65535",\cf1\highlight2 
+\par \cf8\highlight0         "LimitNOFILESoft": "65535",\cf1\highlight2 
+\par \cf8\highlight0         "LimitNPROC": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitNPROCSoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitRSS": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitRSSSoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitRTPRIO": "0",\cf1\highlight2 
+\par \cf8\highlight0         "LimitRTPRIOSoft": "0",\cf1\highlight2 
+\par \cf8\highlight0         "LimitRTTIME": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitRTTIMESoft": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "LimitSIGPENDING": "30446",\cf1\highlight2 
+\par \cf8\highlight0         "LimitSIGPENDINGSoft": "30446",\cf1\highlight2 
+\par \cf8\highlight0         "LimitSTACK": "10485760",\cf1\highlight2 
+\par \cf8\highlight0         "LimitSTACKSoft": "10485760",\cf1\highlight2 
+\par \cf8\highlight0         "LoadState": "loaded",\cf1\highlight2 
+\par \cf8\highlight0         "LockPersonality": "no",\cf1\highlight2 
+\par \cf8\highlight0         "LogLevelMax": "-1",\cf1\highlight2 
+\par \cf8\highlight0         "LogRateLimitBurst": "0",\cf1\highlight2 
+\par \cf8\highlight0         "LogRateLimitIntervalUSec": "0",\cf1\highlight2 
+\par \cf8\highlight0         "LogsDirectoryMode": "0755",\cf1\highlight2 
+\par \cf8\highlight0         "MainPID": "26575",\cf1\highlight2 
+\par \cf8\highlight0         "ManagedOOMMemoryPressure": "auto",\cf1\highlight2 
+\par \cf8\highlight0         "ManagedOOMMemoryPressureLimit": "0",\cf1\highlight2 
+\par \cf8\highlight0         "ManagedOOMPreference": "none",\cf1\highlight2 
+\par \cf8\highlight0         "ManagedOOMSwap": "auto",\cf1\highlight2 
+\par \cf8\highlight0         "MemoryAccounting": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "MemoryAvailable": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "MemoryCurrent": "13602816",\cf1\highlight2 
+\par \cf8\highlight0         "MemoryDenyWriteExecute": "no",\cf1\highlight2 
+\par \cf8\highlight0         "MemoryHigh": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "MemoryLimit": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "MemoryLow": "0",\cf1\highlight2 
+\par \cf8\highlight0         "MemoryMax": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "MemoryMin": "0",\cf1\highlight2 
+\par \cf8\highlight0         "MemorySwapMax": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "MountAPIVFS": "no",\cf1\highlight2 
+\par \cf8\highlight0         "NFileDescriptorStore": "0",\cf1\highlight2 
+\par \cf8\highlight0         "NRestarts": "0",\cf1\highlight2 
+\par \cf8\highlight0         "NUMAPolicy": "n/a",\cf1\highlight2 
+\par \cf8\highlight0         "Names": "httpd.service",\cf1\highlight2 
+\par \cf8\highlight0         "NeedDaemonReload": "no",\cf1\highlight2 
+\par \cf8\highlight0         "Nice": "0",\cf1\highlight2 
+\par \cf8\highlight0         "NoNewPrivileges": "no",\cf1\highlight2 
+\par \cf8\highlight0         "NonBlocking": "no",\cf1\highlight2 
+\par \cf8\highlight0         "NotifyAccess": "main",\cf1\highlight2 
+\par \cf8\highlight0         "OOMPolicy": "continue",\cf1\highlight2 
+\par \cf8\highlight0         "OOMScoreAdjust": "0",\cf1\highlight2 
+\par \cf8\highlight0         "OnFailureJobMode": "replace",\cf1\highlight2 
+\par \cf8\highlight0         "OnSuccessJobMode": "fail",\cf1\highlight2 
+\par \cf8\highlight0         "Perpetual": "no",\cf1\highlight2 
+\par \cf8\highlight0         "PrivateDevices": "no",\cf1\highlight2 
+\par \cf8\highlight0         "PrivateIPC": "no",\cf1\highlight2 
+\par \cf8\highlight0         "PrivateMounts": "no",\cf1\highlight2 
+\par \cf8\highlight0         "PrivateNetwork": "no",\cf1\highlight2 
+\par \cf8\highlight0         "PrivateTmp": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "PrivateUsers": "no",\cf1\highlight2 
+\par \cf8\highlight0         "ProcSubset": "all",\cf1\highlight2 
+\par \cf8\highlight0         "ProtectClock": "no",\cf1\highlight2 
+\par \cf8\highlight0         "ProtectControlGroups": "no",\cf1\highlight2 
+\par \cf8\highlight0         "ProtectHome": "no",\cf1\highlight2 
+\par \cf8\highlight0         "ProtectHostname": "no",\cf1\highlight2 
+\par \cf8\highlight0         "ProtectKernelLogs": "no",\cf1\highlight2 
+\par \cf8\highlight0         "ProtectKernelModules": "no",\cf1\highlight2 
+\par \cf8\highlight0         "ProtectKernelTunables": "no",\cf1\highlight2 
+\par \cf8\highlight0         "ProtectProc": "default",\cf1\highlight2 
+\par \cf8\highlight0         "ProtectSystem": "no",\cf1\highlight2 
+\par \cf8\highlight0         "RefuseManualStart": "no",\cf1\highlight2 
+\par \cf8\highlight0         "RefuseManualStop": "no",\cf1\highlight2 
+\par \cf8\highlight0         "ReloadResult": "success",\cf1\highlight2 
+\par \cf8\highlight0         "RemainAfterExit": "no",\cf1\highlight2 
+\par \cf8\highlight0         "RemoveIPC": "no",\cf1\highlight2 
+\par \cf8\highlight0         "Requires": "system.slice sysinit.target -.mount",\cf1\highlight2 
+\par \cf8\highlight0         "RequiresMountsFor": "/var/tmp",\cf1\highlight2 
+\par \cf8\highlight0         "Restart": "no",\cf1\highlight2 
+\par \cf8\highlight0         "RestartKillSignal": "28",\cf1\highlight2 
+\par \cf8\highlight0         "RestartUSec": "100ms",\cf1\highlight2 
+\par \cf8\highlight0         "RestrictNamespaces": "no",\cf1\highlight2 
+\par \cf8\highlight0         "RestrictRealtime": "no",\cf1\highlight2 
+\par \cf8\highlight0         "RestrictSUIDSGID": "no",\cf1\highlight2 
+\par \cf8\highlight0         "Result": "success",\cf1\highlight2 
+\par \cf8\highlight0         "RootDirectoryStartOnly": "no",\cf1\highlight2 
+\par \cf8\highlight0         "RuntimeDirectoryMode": "0755",\cf1\highlight2 
+\par \cf8\highlight0         "RuntimeDirectoryPreserve": "no",\cf1\highlight2 
+\par \cf8\highlight0         "RuntimeMaxUSec": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "RuntimeRandomizedExtraUSec": "0",\cf1\highlight2 
+\par \cf8\highlight0         "SameProcessGroup": "no",\cf1\highlight2 
+\par \cf8\highlight0         "SecureBits": "0",\cf1\highlight2 
+\par \cf8\highlight0         "SendSIGHUP": "no",\cf1\highlight2 
+\par \cf8\highlight0         "SendSIGKILL": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "Slice": "system.slice",\cf1\highlight2 
+\par \cf8\highlight0         "StandardError": "inherit",\cf1\highlight2 
+\par \cf8\highlight0         "StandardInput": "null",\cf1\highlight2 
+\par \cf8\highlight0         "StandardOutput": "journal",\cf1\highlight2 
+\par \cf8\highlight0         "StartLimitAction": "none",\cf1\highlight2 
+\par \cf8\highlight0         "StartLimitBurst": "5",\cf1\highlight2 
+\par \cf8\highlight0         "StartLimitIntervalUSec": "10s",\cf1\highlight2 
+\par \cf8\highlight0         "StartupBlockIOWeight": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "StartupCPUShares": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "StartupCPUWeight": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "StartupIOWeight": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "StateChangeTimestamp": "Sat 2024-06-01 14:50:56 UTC",\cf1\highlight2 
+\par \cf8\highlight0         "StateChangeTimestampMonotonic": "335612667",\cf1\highlight2 
+\par \cf8\highlight0         "StateDirectoryMode": "0755",\cf1\highlight2 
+\par \cf8\highlight0         "StatusErrno": "0",\cf1\highlight2 
+\par \cf8\highlight0         "StatusText": "Total requests: 0; Idle/Busy workers 100/0;Requests/sec: 0; Bytes served/sec:   0 B/sec",\cf1\highlight2 
+\par \cf8\highlight0         "StopWhenUnneeded": "no",\cf1\highlight2 
+\par \cf8\highlight0         "SubState": "running",\cf1\highlight2 
+\par \cf8\highlight0         "SuccessAction": "none",\cf1\highlight2 
+\par \cf8\highlight0         "SyslogFacility": "3",\cf1\highlight2 
+\par \cf8\highlight0         "SyslogLevel": "6",\cf1\highlight2 
+\par \cf8\highlight0         "SyslogLevelPrefix": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "SyslogPriority": "30",\cf1\highlight2 
+\par \cf8\highlight0         "SystemCallErrorNumber": "2147483646",\cf1\highlight2 
+\par \cf8\highlight0         "TTYReset": "no",\cf1\highlight2 
+\par \cf8\highlight0         "TTYVHangup": "no",\cf1\highlight2 
+\par \cf8\highlight0         "TTYVTDisallocate": "no",\cf1\highlight2 
+\par \cf8\highlight0         "TasksAccounting": "yes",\cf1\highlight2 
+\par \cf8\highlight0         "TasksCurrent": "177",\cf1\highlight2 
+\par \cf8\highlight0         "TasksMax": "1114",\cf1\highlight2 
+\par \cf8\highlight0         "TimeoutAbortUSec": "1min 30s",\cf1\highlight2 
+\par \cf8\highlight0         "TimeoutCleanUSec": "infinity",\cf1\highlight2 
+\par \cf8\highlight0         "TimeoutStartFailureMode": "terminate",\cf1\highlight2 
+\par \cf8\highlight0         "TimeoutStartUSec": "1min 30s",\cf1\highlight2 
+\par \cf8\highlight0         "TimeoutStopFailureMode": "terminate",\cf1\highlight2 
+\par \cf8\highlight0         "TimeoutStopUSec": "1min 30s",\cf1\highlight2 
+\par \cf8\highlight0         "TimerSlackNSec": "50000",\cf1\highlight2 
+\par \cf8\highlight0         "Transient": "no",\cf1\highlight2 
+\par \cf8\highlight0         "Type": "notify",\cf1\highlight2 
+\par \cf8\highlight0         "UID": "[not set]",\cf1\highlight2 
+\par \cf8\highlight0         "UMask": "0022",\cf1\highlight2 
+\par \cf8\highlight0         "UnitFilePreset": "disabled",\cf1\highlight2 
+\par \cf8\highlight0         "UnitFileState": "disabled",\cf1\highlight2 
+\par \cf8\highlight0         "UtmpMode": "init",\cf1\highlight2 
+\par \cf8\highlight0         "Wants": "tmp.mount httpd-init.service",\cf1\highlight2 
+\par \cf8\highlight0         "WatchdogSignal": "6",\cf1\highlight2 
+\par \cf8\highlight0         "WatchdogTimestampMonotonic": "0",\cf1\highlight2 
+\par \cf8\highlight0         "WatchdogUSec": "0"\cf1\highlight2 
+\par \cf8\highlight0     \}\cf1\highlight2 
+\par \cf8\highlight0\}\cf1\highlight2 
+\par \cf0\highlight0 [ec2-user@ip-172-31-18-237 ~]$\cf1\highlight2 
+\par \pard\cf0\highlight0\f2 
+\par }
+ 

@@ -1,0 +1,392 @@
+==================
+TERRAFORM
+==================
+*Its a DevOps Tool
+*Its a Configuration AutoMation Tool
+*Terraform-IAAC
+*Terraform company name is HashiCorp
+*Terraform is written in HCL Language
+(Hashi Corp Language which is similar to json file)
+*Its a Open source Product-(Free)
+
+Cloud Formation-IAAC-Infrastructue as a Code
+
+Application Needs
+*Server-EC2
+*Storage-S3
+*Network-VPC
+*Database-RDS
+*Load Balancer-ELB
+*Auto Scaling-ASG
+*Access-IAM
+
+
+If a Project needs 10 servers
+manually it takes 5 minutes to create a instance
+20 minutes to create a VPC
+
+Database takes-10 minutes
+ELB,ASG-10 minutes
+
+to create all it takes 1-2 hours
+
+In real time usually it wont take 1 hour
+================================================================================
+TERRAFORM
+
+Terraform Vs Ansible
+
+Terraform-Project
+Create 10 Instances
+if i
+Code.Ec2=4==4instance
+if i
+Code.Ec2=8==4instance+4instance
+if i
+Code.Ec2=10==4instance+4instance+2instance
+
+Ansible-Project
+Create 10 Instances
+if i
+Code.Ec2=4==4instance
+if i
+Code.Ec2=8==4instance+8instance
+if i
+Code.Ec2=10==4instance+4instance+10instance
+
+So why use ansible=
+*Its an Application Oriented Configuration
+*Ex:To Change Port number
+*Ex:To Deployment
+
+To Build infrastructure
+*then terraform
+*it has a state file which records the entries
+if i give 4 instances it created 4
+then if igive another 4 instances then it verifies and creates another 4 valuing the total of 8
+===================================================================================
+
+.tf--->Terraform file extension
+
+Google terraform.io
+download on top
+terraform version 1.3.5
+terraform version 1.8.4
+Linux--Amazon Linux
+use the commands
+#sudo yum install -y yum-utils shadow-utils
+##sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+###sudo yum -y install terraform
+or
+AMD64 copy the download link address
+Create a Ec2 instance
+Install using
+#sudo su
+#wget https://releases.hashicorp.com/terraform/1.8.4/terraform_1.8.4_linux_amd64.zip
+#ll
+#unzip terraform_1.8.4_linux_amd64.zip
+#ll
+#mv terraform /usr/local/bin ------>to move the file to c drive....usr/local/bin-->Commanding place
+#terraform --version
+
+=========================
+Environment:EC2,S3,VPC,RDS,ELB,ASG,IAM
+Set of Servers
+PROD---(Production Environment)
+DEV------(Developer Environment)
+developers code in the servers
+Test---Code Test--Application
+UAT/CAT---Client acceptance testing
+All the environments is set by DevOps
+
+SO i needed to have a code for all infrastrucute
+to build all environments
+==================================
+to run a code for infrastructure
+go to terraform registry
+to create a vpc
+*to login to console--
+i have to select a provider ---Scroll down select AWS
+Version---AWS Documenation Version--Choose 1 month before version
+*AWS Provider
+Copy the first step
+
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+
+Second Step:Select Region
+
+provider "aws" {
+  region = "ap-southeast-1"
+}
+
+Third Step:
+Scroll the left side and select VPC at last
+Dont touch the default vpc
+
+resource:aws_vpc
+reference name:Nickname(Can Be Anything)
+Basic usage with tags:
+
+resource "aws_vpc" "nickname" {
+  cidr_block       = "10.0.0.0/16"
+  instance_tenancy = "default"
+
+  tags = {
+    Name = "NICKNAME"
+  }
+}
+
+Fourth Step:
+Resource: aws_subnet
+Subnets:
+Basic Usage
+PUBLIC SUBNET:
+
+resource "aws_subnet" "publicnickname" {
+  vpc_id     = aws_vpc.nickname.id
+  cidr_block = "10.0.1.0/24"
+
+  tags = {
+    Name = "PUBLICNICKNAME"
+  }
+}
+
+PRIVATE SUBNET:
+
+resource "aws_subnet" "privatenickname" {
+  vpc_id     = aws_vpc.nickname.id
+  cidr_block = "10.0.2.0/24"
+
+  tags = {
+    Name = "PRIVATENICKNAME"
+  }
+}
+
+Fifth Step:
+Internet Gateway:
+Resource: aws_internet_gateway
+
+resource "aws_internet_gateway" "nicknameigw" {
+  vpc_id = aws_vpc.nickname.id
+
+  tags = {
+    Name = "NICKNAMEIGW"
+  }
+}
+
+Sixth Step:
+Route Table:
+Resource: aws_route_table
+
+PUBLIC ROUTE TABLE:
+resource "aws_route_table" "nicknamepubrt" {
+  vpc_id = aws_vpc.nickname.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.nicknameigw.id
+  }
+
+  tags = {
+    Name = "PUBLICRT"
+  }
+}
+
+PRIVATE ROUTE TABLE:
+NOTE:TO CONNECT NAT GATEWAY
+
+resource "aws_route_table" "nicknameprirt" {
+  vpc_id = aws_vpc.nickname.id
+
+  tags = {
+    Name = "PRIVATERT"
+  }
+}
+
+Seventh Step:
+NAT GATEWAY:
+Resource: aws_nat_gateway
+
+
+
+
+
+
+
+
+
+
+NOTE:Even if the steps are jumbled the code will be
+executed--->It will Automatically run
+======================================
+
+Copy the Above code to below
+#vi environment.tf
+#cat environment.tf
+=========================================
+
+Terraform Commands
+#terraform init--->to initialize
+#terraform validate---->to check
+#terraform plan----->execute one by one
+#terraform apply---->apply code
+#terraform destroy---->to destroy the code
+
+===============================
+
+#terraform init
+terraform has succesfully initiallized
+
+#terraform validate
+configuration valid
+
+#terraform plan
+you know the components written but in real time you wont know
+becos some seniors have written
+this command gives the idea
+
+error shows--Username and password
+you have to connect to aws by attaching iam roles
+
+IAM--->Role--->AWS Service-->EC2
+ADMINACCESS--->Create the role
+Terraform role-->create
+
+Go to the instances to attach the roles--->action-->modify IAM ROle
+update
+
+then again run the same command
+it will show
+
+# terraform apply
+give yes
+ctrl+c to stop
+
+
+#terraform destroy
+to avoid manual error
+delete is also easy
+
+#terraform destroy
+it will give a list to destroy
+confirmation to yes
+it will delete
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

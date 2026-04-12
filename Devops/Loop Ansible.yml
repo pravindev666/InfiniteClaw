@@ -1,0 +1,13 @@
+- hosts: india
+  remote-user: ec2-user
+  become: yes
+  tasks:
+    - name: Install All Packages
+      yum:
+        name: "{{ item }}"
+        state: present 
+      loop:
+         - mysql
+         - php
+         - httpd
+         - wget

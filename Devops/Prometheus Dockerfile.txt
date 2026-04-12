@@ -1,0 +1,37 @@
+# Use the official Alpine Linux base image
+FROM alpine:latest
+
+# Install necessary packages
+RUN apk update && \
+    apk add --no-cache vim wget curl tar
+
+# Set Prometheus version
+ENV PROMETHEUS_VERSION=2.45.0
+
+# Download and install Prometheus
+RUN wget https://github.com/prometheus/prometheus/releases/download/v${PROMETHEUS_VERSION}/prometheus-${PROMETHEUS_VERSION}.linux-amd64.tar.gz && \
+    tar -xzf prometheus-${PROMETHEUS_VERSION}.linux-amd64.tar.gz && \
+    mv prometheus-${PROMETHEUS_VERSION}.linux-amd64/prometheus /bin/prometheus && \
+    mv prometheus-${PROMETHEUS_VERSION}.linux-amd64/promtool /bin/promtool && \
+    mkdir -p /etc/prometheus && \
+    mv prometheus-${PROMETHEUS_VERSION}.linux-amd64/consoles /etc/prometheus && \
+    mv prometheus-${PROMETHEUS_VERSION}.linux-amd64/console_libraries /etc/prometheus && \
+    mv prometheus-${PROMETHEUS_VERSION}.linux-amd64/prometheus.yml /etc/prometheus && \
+    rm -rf prometheus-${PROMETHEUS_VERSION}.linux-amd64* && \
+    apk del curl tar
+
+# Expose Prometheus port
+EXPOSE 9090
+
+# Define the entrypoint
+ENTRYPOINT [ "/bin/prometheus" ]
+
+# Use the default configuration file
+CMD [ "--config.file=/etc/prometheus/prometheus.yml", \
+      "--storage.tsdb.path=/prometheus", \
+      "--web.console.libraries=/etc/prometheus/console_libraries", \
+      "--web.console.templates=/etc/prometheus/consoles" ]
+======================================================================
+
+docker build -t my-prometheus .
+docker run -d -p 9090:9090 --name prometheus my-prometheus

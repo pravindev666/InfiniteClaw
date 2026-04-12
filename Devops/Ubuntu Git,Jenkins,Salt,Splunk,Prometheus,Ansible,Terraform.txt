@@ -1,0 +1,123 @@
+FOR UBUNTU
+==================================
+JENKINS
+==================================
+#sudo su -
+
+-->Download the ubuntu packages /Jenkins Debian Packages
+# sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+    https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+
+# echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+    https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+    /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+# sudo apt-get update
+# sudo apt-get install fontconfig openjdk-17-jre
+# sudo apt-get install jenkins
+========================================================================================
+SALT
+=========================================================
+#sudo apt-get update
+#python3 --version
+#sudo apt install -y python3 python3-pip python3-venv
+#sudo curl -fsSL -o /etc/apt/keyrings/salt-archive-keyring-2023.gpg https://repo.saltproject.io/salt/py3/ubuntu/24.04/amd64/SALT-PROJECT-GPG-PUBKEY-2023.gpg
+#echo "deb [signed-by=/etc/apt/keyrings/salt-archive-keyring-2023.gpg arch=amd64] https://repo.saltproject.io/salt/py3/ubuntu/24.04/amd64/latest noble main" | sudo tee /etc/apt/sources.list.d/salt.list
+#sudo apt-get update
+#sudo apt-get install salt-master
+#salt --version
+#sudo systemctl enable salt-master && sudo systemctl start salt-master
+============================================================
+ANSIBLE
+#sudo apt install python3-pip -y
+#sudo apt install ansible -y
+
+=============================================================
+TERRAFORM
+#wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+#echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+#sudo apt update && sudo apt install terraform
+=========================================================================
+DOCKER
+#sudo su -
+#apt-get update -y
+#apt-get install docker.io -y
+#docker --version
+==================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=================================================
+TERRAFORM
+
+
+
+
+
+
+
+
+
+
+
+
+============================================================
+LINUX
+Splunk
+Prometheus
+
+these 2 does not work in ubuntu
+Only Wins,linux.macos,
+
+
+====================================================
+DOCKER
+#sudo yum install docker -y
+#sudo systemctl start docker
+#sudo systemctl status docker
+#docker --version
+====================================================
+ANSIBLE
+#yum install python-pip -y
+#pip install ansible
+======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

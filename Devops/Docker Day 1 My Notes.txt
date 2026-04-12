@@ -1,0 +1,197 @@
+====================================
+DOCKER-1
+===========================
+
+Monolithic
+One Server-->One MiddleWare Can be Installed--->one Application can be run
+
+Microservice
+One Server-->Multiple Application can be run
+
+For Monolithic We Can Use Salt stack,Ansible
+
+*Traditional Deployment:Ratio 1:1
+
+Server->Middleware->Application
+Ubuntu}->500mb OS Storage
+2000mb}
+
+*Virtual Machine Deployment
+
+Server->Hyperversion->Multiple OS
+|              |->Virtual Machine |->Python app,FB app,Java App
+->Ubuntu 500mb/2000mb
+
+So on the  Multiple OS you can install all the dependency software
+to run the application like java,ruby etc
+Hardware level virtualization
+Have to purchase elastic id
+Public ip changes
+
+*Containerization
+Server->Docker Engine->OS-------------->Application
+|                                          |->Redhat,CentOs,Suse(All can be installed)
+|
+|->>>>Ubuntu 500mb/2000mb
+
+Kernel Support is taken from Host OS
+Redhat behaviour is the same,Funcationality comes as an image
+OS Level Virtualization
+Can Do port forwarding
+Source Image
+
+The docker engine bring a linux machine
+
+====================================================================
+CONTAINERIZATION
+
+Docker File:OS/PYTHON dependency/
+|   |   |   |   |   |
+->Converted to Image-->Docker Image
+|
+->That Image is run as container
+=============================================
+We can even use Predefined Docker File
+
+
+Take an ubuntu Server
+#sudo su -
+#apt-get update -y
+#apt-get install docker.io -y
+#docker --version
+#
+Go to hub.docker.com
+sign in
+#docker -info
+Geekflare- docker archiecture
+For predefine Images
+#docker pull httpd
+docker will pull-->client side
+From docker's own server/repository it will push image to server
+ 
+In the Docker Hub search for httpd
+#docker pull nginx
+#docker images
+shows list of images pushed
+#docker pull centos
+#docker images
+if the version not give it will think of latest version
+#docker run -itd --name fb -p "8081:80" httpd
+-itd is parameters
+fb--any name
+-p-port number any thing
+
+a container will be formed
+docker run -itd --name wa -p "8082:80" httpd
+another container will be created
+
+#docker ps
+will show list of containers with container id
+#docker ps -a
+if any container is stopped it will show
+#docker exec -it container id any first two letters are enough /bin/bash
+#docker exec -it ee /bin/bash
+#ls
+#cd htdocs
+#ls
+#cat index.html
+it works
+#vi index.html
+it wont open
+#in container you have to update the container
+#apt-get update -y
+#apt-get install vim -y
+#vi index.html
+now you can edit now
+
+#copy public id :8081
+shows editied version
+#copy public id :8082
+shows default version
+
+In this One Server 2 application is running
+
+#exit
+exit the container
+
+==================================
+Basic commands
+#docker stop conatainer id
+to Stop a container
+#docker ps -a
+shows the stopped and running conatiners
+
+#docker pause conatiner id
+pauses the container
+
+#docker unpause container id
+
+#docker start container id
+
+#docker inspect container id
+shows resource details
+port number,ip address
+
+#docker stats container id
+cpu proccess,memory usage, limit
+
+#docker top container id
+container proccess id
+
+#docker container rm container id
+wont remove a running container
+
+#docker conatiner rm -f container id
+deletes the container
+
+#docker images
+#docker rmi centos
+to delete a image
+
+#docker search httpd
+shows list of httpd images
+
+#docker search nginx
+
+#docker ps
+
+#docker stop container id
+stops the container
+#docker ps -a
+shows a list
+
+#docker container prune
+yes
+
+deletes all conatiners
+
+==========================================================
+#history
+gives a history
+
+
+
+
+==========================================================================
+so i started a amazon linux OS Container
+and installed httpd not directrly
+#yum install sudo
+#yum install vim
+#yum install wget
+#yum install httpd
+to strat httpd
+
+httpd -DFOREGROUND
+or
+httpd -k star
+
+
+
+
+
+
+
+
+
+
+

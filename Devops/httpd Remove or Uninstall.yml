@@ -1,0 +1,15 @@
+- name: Stop and remove Apache on India servers
+  hosts: india
+  remote_user: ec2-user
+  become: yes
+
+  tasks:
+    - name: Stop the Apache service
+      service:
+        name: httpd
+        state: stopped
+
+    - name: Remove Apache package
+      yum:
+        name: httpd
+        state: absent
