@@ -21,14 +21,7 @@
 
 **InfiniteClaw** is a **local-first, AI-powered DevOps infrastructure management platform** that connects to your remote servers via SSH and provides unified control over 31 enterprise DevOps tools through a single, intelligent dashboard.
 
-It combines the power of **Large Language Models (OpenAI GPT-4, Claude, Gemini)** with real-time **SSH-based server management** to create an AI assistant that can detect, monitor, configure, and control your entire DevOps toolchain — from Jenkins pipelines to Kubernetes clusters, from Docker containers to Terraform infrastructure.
-
-> **Project Domain:** AI-Assisted DevOps Automation & Infrastructure Management  
-> **Academic Topic:** Intelligent Infrastructure Orchestration using LLM-Driven Agentic Systems  
-> **Category:** Cloud Computing & DevOps | Artificial Intelligence | Systems Administration
-
-### Key Innovation
-Unlike traditional DevOps dashboards that require manual configuration for each tool, InfiniteClaw uses **AI-driven auto-detection** — it scans your servers, discovers installed tools automatically, and provides contextual AI assistance for each one. You can ask natural language questions like *"Show me all failed Jenkins builds"* or *"Scale the Kubernetes deployment to 5 replicas"* and the AI executes the appropriate commands.
+It evolves your infrastructure into a **"God-Mode"** environment where a single engineer can manage an entire corporate fleet autonomously.
 
 ---
 
@@ -36,168 +29,92 @@ Unlike traditional DevOps dashboards that require manual configuration for each 
 
 | Feature | Description |
 |---|---|
-| 🧠 **AI-Powered Chat** | Natural language control of your infrastructure using OpenAI/Claude/Gemini via LiteLLM |
-| 🔍 **Auto-Detection** | Parallel scanning of servers to discover 31 DevOps tools automatically |
-| 📺 **Pictorial GUI** | Live dashboards with real-time data for every detected tool |
-| 💬 **Context-Aware AI** | Each tool gets its own AI chatbox that understands the tool's context |
-| 🔄 **CI/CD Visualization** | Pipeline flow view — trace code from push to deployment |
-| 📱 **Telegram Control** | Manage infrastructure remotely from your phone |
-| 🖥️ **Desktop App** | Native window via PyWebView — runs like a desktop application |
-| 🔒 **100% Local** | No cloud dependencies — runs entirely on your machine |
-| 🔑 **Multi-Server SSH** | Manage unlimited servers with connection pooling |
-| 📊 **Usage Analytics** | Track AI token usage, costs, and response times |
+| 🧠 **Infinity Core** | A centralized "Jarvis-like" AI hub for one-click infrastructure orchestration |
+| ⏪ **Time Travel** | Deterministic state snapshots allow reversing server states to "Yesterday at 4 PM" |
+| ⚖️ **AI Swarm Council** | Multi-agent boardroom (SecOps, FinOps, SRE) that debates architecture before deployment |
+| 🚀 **Code-to-Cloud** | Zero-config deployments. Drop raw code and the AI authors Dockerfiles/K8s YAMLs |
+| 🛠️ **Kill Drift** | Detect manual rogue changes on AWS/GCP and violently overwrite them to match Terraform |
+| 🔒 **Auto-SOC2** | Generate 50-page compliance reports autonomously in seconds |
+| 💰 **CFO FinOps** | Identify idle cloud resources and assassinate waste with one click |
+| 🧨 **AI Red Team** | Autonomous weekly penetration testing with auto-patching git commits |
+| 🗄️ **Safe Migrator** | Zero-downtime database schema changes on 100M+ row tables |
 
 ---
 
-## 🔧 Supported Tools (31)
+## 🔄 How It Works (Enterprise Apex)
 
-| Category | Tools | Count |
-|---|---|---|
-| 🏗️ **CI/CD** | Jenkins, GitLab CI, ArgoCD, GitHub Actions | 4 |
-| 🐳 **Containers** | Docker, Kubernetes, Helm, Podman, Harbor Registry | 5 |
-| 📡 **Monitoring** | Prometheus, Grafana, Splunk, ELK Stack, Nagios, Jaeger, Zabbix | 7 |
-| ⚙️ **Config & IaC** | Ansible, Terraform, Chef, Puppet, Packer, HashiCorp Vault, Consul | 7 |
-| 🛡️ **Security** | SonarQube, Trivy | 2 |
-| 🌐 **Networking** | Nginx, HAProxy, Traefik | 3 |
-| 📦 **Data & Messaging** | Kafka, RabbitMQ, Nexus Artifactory | 3 |
+### 🔒 Autonomous SOC2 Auditing
+```mermaid
+sequenceDiagram
+    participant User
+    participant IC as InfiniteClaw AI
+    participant Cloud as AWS/GCP API
+    participant Auditor as SOC2 Regulator
+    
+    User->>IC: Initiate Global Audit
+    IC->>Cloud: Scan KMS Encryption & IAM Roles
+    IC->>Cloud: Audit Security Groups & RBAC
+    IC->>IC: Synthesize Compliance Evidence
+    IC-->>User: Generate 50-page SOC2 PDF
+    User->>Auditor: Hand Over Report (Audit Passed)
+```
+
+### 💰 FinOps "CFO Mode" Waste Assassination
+```mermaid
+graph LR
+    API[AWS Billing APIs] --> Brain[InfiniteClaw Brain]
+    Grafana[CPU Metrics] --> Brain
+    Brain --> Waste{Identify Waste?}
+    Waste -- "$8.4k/mo Idle" --> UI[CFO Dashboard]
+    UI -->|Click| Execute[Execute Savings]
+    Execute --> Cloud[Hibernate Idle Nodes]
+```
+
+### 🧨 AI Red Team Penetration Testing
+```mermaid
+sequenceDiagram
+    participant App as Staging App
+    participant Red as AI Red Team
+    participant Git as GitHub Repo
+    
+    Red->>App: Launch SQLi & XSS Payloads
+    App-->>Red: Exploit Successful (Auth Bypass)
+    Red->>Red: Author Python Security Patch
+    Red->>Git: Push Commit to security/fixed-01
+    Git-->>User: PR Waiting for Review
+```
+
+### 🗄️ Zero-Downtime DB Migration
+```mermaid
+graph TD
+    User[Add Column to 120M row Table] --> Analyze[Risk Analysis]
+    Analyze -->|Danger: 14min Lock| Plan[AI SQL Strategy]
+    Plan --> Script["CREATE INDEX CONCURRENTLY"]
+    Script --> Snap[disk Snapshot]
+    Snap --> Exec[Background Execution]
+    Exec --> Live[Success: 0.0s Downtime]
+```
 
 ---
 
-## 🚀 Quick Start
+## 🔧 Legacy & VM Support (Inspiration from WolfClaw)
 
-### Prerequisites
-- Python 3.12+
-- OpenAI API Key (or any LiteLLM-supported provider)
-- SSH access to at least one remote server
+InfiniteClaw honors the legacy of **WolfClaw** by providing robust support for virtualization workflows:
+- **Keys**: Native support for **.pem** and **.ppk** (PuTTY) authentication workflows.
+- **VirtualBox**: Pre-configured defaults for local VM management (NAT/Host-only adapters).
+- **Proxmox/ESXi**: Seamless integration with local hypervisors via SSH.
 
-### Installation
+---
+
+## 🚀 Quick Start (God-Mode Edition)
 
 ```bash
-# Clone the project
-cd InfiniteClaw
-
-# Install dependencies
-pip install -r requirements.txt
-
-# First-time setup (creates account, configures API key, adds server)
+# Clone and Setup
 python cli.py setup
-```
 
-### Launch Options
-
-```bash
-# Option 1: Streamlit Web UI
-streamlit run app.py
-
-# Option 2: Desktop App (native window)
+# Launch the Command Center
 python desktop_launcher.py
-
-# Option 3: Terminal Chat
-python cli.py chat
-
-# Option 4: Telegram Bot
-python channels/telegram_worker.py
 ```
-
----
-
-## 🖥️ CLI Commands
-
-```bash
-python cli.py setup          # First-time setup wizard
-python cli.py status         # Infrastructure health check
-python cli.py chat           # Interactive AI chat in terminal
-python cli.py scan <server>  # Scan server for DevOps tools
-python cli.py server list    # List connected servers
-python cli.py server add     # Add a new SSH server
-```
-
----
-
-## 🏗️ Architecture
-
-```
-InfiniteClaw/
-├── app.py                  # Streamlit Web UI entry point
-├── cli.py                  # Typer CLI interface
-├── desktop_launcher.py     # Native desktop window (PyWebView)
-├── SOUL.md                 # AI personality directive
-│
-├── core/                   # Engine & Infrastructure
-│   ├── config.py           # Configuration & API key management
-│   ├── local_db.py         # SQLite database (10 tables)
-│   ├── llm_engine.py       # LLM orchestration via LiteLLM
-│   ├── ssh_manager.py      # Multi-server SSH connection pooling
-│   ├── vault.py            # PBKDF2-encrypted secret storage
-│   ├── activity_feed.py    # Real-time event logging
-│   └── metrics.py          # Usage analytics tracking
-│
-├── tools/                  # 31 DevOps Tool Adapters
-│   ├── base.py             # Abstract adapter interface
-│   ├── tool_router.py      # Master routing engine
-│   ├── scanner.py          # Parallel server scanner
-│   └── *_adapter.py        # Individual tool adapters (31 files)
-│
-├── ui/                     # Streamlit Views
-│   ├── styles.py           # Glassmorphic CSS theme
-│   ├── views.py            # Main dispatcher & sidebar
-│   ├── dashboard_view.py   # Infrastructure overview
-│   ├── devops_tool_view.py # Generic tool page (GUI + AI chat)
-│   ├── server_view.py      # SSH server management
-│   ├── chat_view.py        # General AI chat
-│   └── workflow_view.py    # CI/CD pipeline visualization
-│
-├── channels/               # Communication Channels
-│   └── telegram_worker.py  # Telegram bot interface
-│
-└── static/img/             # Assets
-    └── infiniteclaw-logo.png
-```
-
----
-
-## 🔄 How It Works
-
-```
-┌─────────────┐     ┌──────────────┐     ┌───────────────┐
-│   User       │────▶│  AI Engine   │────▶│  Tool Router  │
-│  (UI/CLI/TG) │     │  (LiteLLM)   │     │  (31 adapters)│
-└─────────────┘     └──────────────┘     └───────┬───────┘
-                                                  │
-                                          ┌───────▼───────┐
-                                          │  SSH Manager   │
-                                          │  (Paramiko)    │
-                                          └───────┬───────┘
-                                                  │
-                              ┌────────────┬──────┴──────┬────────────┐
-                              ▼            ▼             ▼            ▼
-                         Server 1     Server 2      Server 3     Server N
-                         Jenkins      Docker        Prometheus    Terraform
-                         Nginx        K8s           Grafana       Ansible
-```
-
-1. **You ask** → "Show me failed Jenkins builds on prod-server"
-2. **AI Engine** → Parses intent, selects Jenkins adapter
-3. **Tool Router** → Routes to `jenkins_adapter.execute_tool_call()`
-4. **SSH Manager** → Executes `curl localhost:8080/api/json` on prod-server
-5. **AI responds** → Formatted results with analysis
-
----
-
-## 📞 Technologies Used
-
-| Component | Technology |
-|---|---|
-| Language | Python 3.12 |
-| AI Engine | LiteLLM (OpenAI, Claude, Gemini, DeepSeek) |
-| Web UI | Streamlit |
-| Desktop App | PyWebView |
-| CLI | Typer + Rich |
-| SSH | Paramiko |
-| Database | SQLite |
-| Encryption | Cryptography (PBKDF2) |
-| Telegram | python-telegram-bot |
-| Server | FastAPI + Uvicorn |
 
 ---
 

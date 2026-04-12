@@ -21,79 +21,87 @@ from tools.tool_router import TOOL_CATEGORIES, tool_router
 
 # ─── Navigation Map ───
 CORE_PAGES = {
-    "📊 Dashboard": "dashboard",
-    "🏗️ Flow Builder": "flow",
-    "💬 Chat": "chat",
-    "🌐 Remote Servers": "servers",
-    "🔄 CI/CD Workflow": "workflow",
-    "⚙️ Settings": "settings",
+    "Infinity Core": "jarvis",
+    "Code-to-Cloud": "deploy",
+    "Terraform Drift": "drift",
+    "Post-Mortems": "postmortem",
+    "AI Red Team": "redteam",
+    "DB Auto-Migrator": "migrator",
+    "CFO FinOps": "finops",
+    "SOC2 Auditor": "audit",
+    "Dashboard": "dashboard",
+    "Flow Builder": "flow",
+    "Chat": "chat",
+    "Remote Servers": "servers",
+    "CI/CD Workflow": "workflow",
+    "Settings": "settings",
 }
 
 TOOL_NAV = {
     "ci_cd": {
-        "label": "🏗️ CI/CD",
+        "label": "CI/CD",
         "items": [
-            ("🔧 Jenkins", "jenkins"),
-            ("🦊 GitLab CI", "gitlab"),
-            ("🔄 ArgoCD", "argocd"),
-            ("⚡ GitHub Actions", "github_actions"),
+            ("Jenkins", "jenkins"),
+            ("GitLab CI", "gitlab"),
+            ("ArgoCD", "argocd"),
+            ("GitHub Actions", "github_actions"),
         ]
     },
     "containers": {
-        "label": "🐳 Containers",
+        "label": "Containers",
         "items": [
-            ("🐳 Docker", "docker"),
-            ("☸️ Kubernetes", "kubernetes"),
-            ("⎈ Helm", "helm"),
-            ("🦭 Podman", "podman"),
-            ("🏗️ Harbor", "harbor"),
+            ("Docker", "docker"),
+            ("Kubernetes", "kubernetes"),
+            ("Helm", "helm"),
+            ("Podman", "podman"),
+            ("Harbor", "harbor"),
         ]
     },
     "monitoring": {
-        "label": "📡 Monitoring",
+        "label": "Monitoring",
         "items": [
-            ("📡 Prometheus", "prometheus"),
-            ("📊 Grafana", "grafana"),
-            ("🔍 Splunk", "splunk"),
-            ("📚 ELK Stack", "elk"),
-            ("👁️ Nagios", "nagios"),
-            ("🔬 Jaeger", "jaeger"),
-            ("📟 Zabbix", "zabbix"),
+            ("Prometheus", "prometheus"),
+            ("Grafana", "grafana"),
+            ("Splunk", "splunk"),
+            ("ELK Stack", "elk"),
+            ("Nagios", "nagios"),
+            ("Jaeger", "jaeger"),
+            ("Zabbix", "zabbix"),
         ]
     },
     "config_iac": {
-        "label": "⚙️ Config & IaC",
+        "label": "Config & IaC",
         "items": [
-            ("🤖 Ansible", "ansible"),
-            ("🏗️ Terraform", "terraform"),
-            ("🍳 Chef", "chef"),
-            ("🧵 Puppet", "puppet"),
-            ("📦 Packer", "packer"),
-            ("🔐 Vault", "vault"),
-            ("🗺️ Consul", "consul"),
+            ("Ansible", "ansible"),
+            ("Terraform", "terraform"),
+            ("Chef", "chef"),
+            ("Puppet", "puppet"),
+            ("Packer", "packer"),
+            ("Vault", "vault"),
+            ("Consul", "consul"),
         ]
     },
     "security": {
-        "label": "🛡️ Security",
+        "label": "Security",
         "items": [
-            ("🛡️ SonarQube", "sonarqube"),
-            ("🔍 Trivy", "trivy"),
+            ("SonarQube", "sonarqube"),
+            ("Trivy", "trivy"),
         ]
     },
     "networking": {
-        "label": "🌐 Networking",
+        "label": "Networking",
         "items": [
-            ("🌐 Nginx", "nginx"),
-            ("⚖️ HAProxy", "haproxy"),
-            ("🚦 Traefik", "traefik"),
+            ("Nginx", "nginx"),
+            ("HAProxy", "haproxy"),
+            ("Traefik", "traefik"),
         ]
     },
     "data": {
-        "label": "📦 Data & Messaging",
+        "label": "Data & Messaging",
         "items": [
-            ("📬 Kafka", "kafka"),
-            ("🐰 RabbitMQ", "rabbitmq"),
-            ("📦 Nexus", "nexus"),
+            ("Kafka", "kafka"),
+            ("RabbitMQ", "rabbitmq"),
+            ("Nexus", "nexus"),
         ]
     },
 }
@@ -248,9 +256,16 @@ def render_main():
         st.caption(f"👤 {email}")
         st.markdown("---")
 
+        # Handle intelligent routing from Jarvis
+        if "force_page" in st.session_state:
+            target = st.session_state["force_page"]
+            del st.session_state["force_page"]
+            page_index = list(CORE_PAGES.values()).index(target) if target in CORE_PAGES.values() else 0
+            st.session_state["core_nav_radio"] = list(CORE_PAGES.keys())[page_index]
+
         # Core pages
-        page = st.radio("**Core**", list(CORE_PAGES.keys()), label_visibility="visible")
-        selected = CORE_PAGES.get(page, "dashboard")
+        page = st.radio("**Core**", list(CORE_PAGES.keys()), key="core_nav_radio", label_visibility="visible")
+        selected = CORE_PAGES.get(page, "jarvis")
 
         st.markdown("---")
 
@@ -287,7 +302,31 @@ def render_main():
         return
 
     # Core pages
-    if selected == "dashboard":
+    if selected == "jarvis":
+        from ui.jarvis_view import render_infinity_core
+        render_infinity_core()
+    elif selected == "deploy":
+        from ui.deploy_view import render_deploy_view
+        render_deploy_view()
+    elif selected == "drift":
+        from ui.drift_view import render_drift_view
+        render_drift_view()
+    elif selected == "postmortem":
+        from ui.postmortem_view import render_postmortem_view
+        render_postmortem_view()
+    elif selected == "redteam":
+        from ui.redteam_view import render_redteam_view
+        render_redteam_view()
+    elif selected == "migrator":
+        from ui.migrator_view import render_migrator_view
+        render_migrator_view()
+    elif selected == "finops":
+        from ui.finops_view import render_finops_view
+        render_finops_view()
+    elif selected == "audit":
+        from ui.compliance_view import render_compliance_view
+        render_compliance_view()
+    elif selected == "dashboard":
         render_dashboard()
     elif selected == "flow":
         from ui.pipeline_builder_view import render_pipeline_builder

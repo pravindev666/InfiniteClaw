@@ -119,7 +119,20 @@ def main():
     process = start_streamlit(port)
 
     # Wait for server
-    print("[InfiniteClaw] Waiting for server to be ready...")
+    print(f"Starting legacy channel worker (Telegram)...")
+    from core.local_db import init_db
+    init_db()
+
+    # Start Gamified UI Watcher & SRE Bot
+    try:
+        from core.sre_watcher import SREWatcher
+        sre_bot = SREWatcher(check_interval=300) # Ping every 5 minutes
+        sre_bot.start()
+        print("🛡️ Autonomous SRE Watcher Active.")
+    except Exception as e:
+        print("SRE Watcher warning:", e)
+
+    print(f"Streamlit process successfully spawned on port {port}. Booting frontend view...")
     if wait_for_server(port):
         print(f"[InfiniteClaw] Server ready at http://{STREAMLIT_HOST}:{port}")
     else:

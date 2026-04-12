@@ -34,8 +34,8 @@ def render_server_view():
                 key_content = None
             else:
                 password = None
-                key_file = st.file_uploader("Upload PEM Key", type=["pem", "key"])
-                key_content = key_file.read().decode() if key_file else None
+                key_file = st.file_uploader("Upload PEM or PPK Key", type=["pem", "ppk", "key"])
+                key_content = key_file.read().decode(errors='ignore') if key_file else None
 
         if st.button("🔗 Connect & Add Server", use_container_width=True):
             if not all([name, host, username]):

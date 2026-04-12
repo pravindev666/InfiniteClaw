@@ -1,7 +1,0 @@
-00:15:50	ARUN’s iPhone:	Docker push
-00:23:54	Pradeep:	clear
-00:24:03	ARUN’s iPhone:	Clear
-00:24:04	gayathri it:	clear sir
-00:24:33	Karthikeyan:	docker pulldocker imagesdocker psdocker ps -adocker run -itd --name cont -p httpddockere exec -it 23 /bin/bashdocker inspectdocker statsdocker rmi docker container rm  docker container rm -f   docker search image   docker container prune    docker commit cont imagename    docker save -o .tar    docker load -i       docker tag    docker pull dockerhub/   docker login   docker logout   docker push    vi Dockerfile    docker build -t  <imagename> .
-01:04:54	ARUN’s iPhone:	Clear
-01:21:20	ARUN’s iPhone:	Tqq Tataa

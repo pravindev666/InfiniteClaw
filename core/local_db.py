@@ -54,7 +54,27 @@ def init_db():
         id TEXT PRIMARY KEY,
         email TEXT UNIQUE NOT NULL,
         password_hash TEXT NOT NULL,
+        xp INTEGER DEFAULT 0,
+        level INTEGER DEFAULT 1,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )
+    ''')
+    try:
+        c.execute("ALTER TABLE users ADD COLUMN xp INTEGER DEFAULT 0")
+        c.execute("ALTER TABLE users ADD COLUMN level INTEGER DEFAULT 1")
+    except sqlite3.OperationalError:
+        pass
+
+    # ─── Badges ───
+    c.execute('''
+    CREATE TABLE IF NOT EXISTS user_badges (
+        id TEXT PRIMARY KEY,
+        user_id TEXT NOT NULL,
+        badge_name TEXT NOT NULL,
+        badge_icon TEXT NOT NULL,
+        earned_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE,
+        UNIQUE(user_id, badge_name)
     )
     ''')
 
@@ -66,6 +86,17 @@ def init_db():
         name TEXT NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+    )
+    ''')
+
+    # ─── Pipeline Snapshots (God-Mode) ───
+    c.execute('''
+    CREATE TABLE IF NOT EXISTS pipeline_snapshots (
+        id TEXT PRIMARY KEY,
+        workspace_id TEXT NOT NULL,
+        state_json TEXT NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY(workspace_id) REFERENCES workspaces(id) ON DELETE CASCADE
     )
     ''')
 
@@ -232,6 +263,49 @@ def get_user_by_id(user_id: str) -> Optional[Dict]:
     row = c.fetchone()
     conn.close()
     return dict(row) if row else None
+
+
+# ═══════════════════════ GAMIFICATION ═══════════════════════
+
+def award_xp(user_id: str, amount: int):
+    conn = _get_connection()
+    c = conn.cursor()
+    c.execute("SELECT xp, level FROM users WHERE id = ?", (user_id,))
+    row = c.fetchone()
+    if row:
+        new_xp = row["xp"] + amount
+        new_level = (new_xp // 1000) + 1
+        c.execute("UPDATE users SET xp = ?, level = ? WHERE id = ?", (new_xp, new_level, user_id))
+    conn.commit()
+    conn.close()
+
+
+def award_badge(user_id: str, badge_name: str, badge_icon: str) -> bool:
+    """Returns True if badge is newly awarded, False if already had it."""
+    conn = _get_connection()
+    try:
+        conn.execute("INSERT INTO user_badges (id, user_id, badge_name, badge_icon) VALUES (?, ?, ?, ?)",
+                     (str(uuid.uuid4()), user_id, badge_name, badge_icon))
+        conn.commit()
+        return True
+    except sqlite3.IntegrityError:
+        return False
+    finally:
+        conn.close()
+
+
+def get_user_gamification(user_id: str) -> Dict:
+    conn = _get_connection()
+    c = conn.cursor()
+    c.execute("SELECT xp, level FROM users WHERE id = ?", (user_id,))
+    user_row = c.fetchone()
+    c.execute("SELECT badge_name, badge_icon FROM user_badges WHERE user_id = ? ORDER BY earned_at DESC", (user_id,))
+    badges = [dict(r) for r in c.fetchall()]
+    conn.close()
+    if user_row:
+        ur_dict = dict(user_row)
+        return {"xp": ur_dict.get("xp", 0), "level": ur_dict.get("level", 1), "badges": badges}
+    return {"xp": 0, "level": 1, "badges": []}
 
 
 # ═══════════════════════ WORKSPACE OPERATIONS ═══════════════════════
@@ -546,3 +620,38 @@ def get_usage_summary(ws_id: str) -> Dict:
     row = c.fetchone()
     conn.close()
     return dict(row) if row else {}
+
+# ═══════════════════════ PIPELINE TIME TRAVEL ═══════════════════════
+
+def save_snapshot(ws_id: str, state_json: str):
+    """Saves a snapshot of the pipeline graph for ⏪ Time Travel Rollbacks."""
+    conn = _get_connection()
+    # Keep only the last 20 snapshots per workspace to avoid DB bloat
+    c = conn.cursor()
+    c.execute("SELECT count(*) FROM pipeline_snapshots WHERE workspace_id = ?", (ws_id,))
+    count = c.fetchone()[0]
+    if count >= 20:
+        c.execute("""DELETE FROM pipeline_snapshots WHERE id IN (
+                     SELECT id FROM pipeline_snapshots WHERE workspace_id = ? 
+                     ORDER BY created_at ASC LIMIT 1)""", (ws_id,))
+    
+    conn.execute(
+        "INSERT INTO pipeline_snapshots (id, workspace_id, state_json) VALUES (?,?,?)",
+        (str(uuid.uuid4()), ws_id, state_json)
+    )
+    conn.commit()
+    conn.close()
+
+def pop_latest_snapshot(ws_id: str) -> Optional[str]:
+    """Retrieves and deletes the absolute latest snapshot (Undo mechanism)."""
+    conn = _get_connection()
+    c = conn.cursor()
+    c.execute("SELECT id, state_json FROM pipeline_snapshots WHERE workspace_id = ? ORDER BY created_at DESC LIMIT 1", (ws_id,))
+    row = c.fetchone()
+    if row:
+        conn.execute("DELETE FROM pipeline_snapshots WHERE id = ?", (row["id"],))
+        conn.commit()
+        conn.close()
+        return row["state_json"]
+    conn.close()
+    return None

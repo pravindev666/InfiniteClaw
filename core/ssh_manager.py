@@ -32,12 +32,20 @@ class SSHConnection:
 
                 auth = self.config.get("auth_method", "password")
                 if auth == "key" and self.config.get("key_content"):
-                    key_file = io.StringIO(self.config["key_content"])
+                    k_cont = self.config["key_content"]
+                    if "PuTTY-User-Key-File" in k_cont:
+                        raise ValueError("PuTTY (PPK) key detected. InfiniteClaw's God-Mode engine requires OpenSSH (PEM) format. Please export as OpenSSH in PuTTYGen (just like in WolfClaw legacy setups).")
+                    
+                    key_file = io.StringIO(k_cont)
                     try:
                         pkey = paramiko.RSAKey.from_private_key(key_file)
                     except paramiko.ssh_exception.SSHException:
                         key_file.seek(0)
-                        pkey = paramiko.Ed25519Key.from_private_key(key_file)
+                        try:
+                            pkey = paramiko.Ed25519Key.from_private_key(key_file)
+                        except Exception:
+                            key_file.seek(0)
+                            pkey = paramiko.ECDSAKey.from_private_key(key_file)
                     connect_kwargs["pkey"] = pkey
                 elif auth == "key" and self.config.get("key_path"):
                     connect_kwargs["key_filename"] = self.config["key_path"]
