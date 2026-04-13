@@ -6,6 +6,7 @@ from ui.styles import inject_styles
 def render_migrator_view():
     inject_styles()
     st.markdown("<h2 style='color:#00f0ff;'>🗄️ Safe Database Auto-Migrator</h2>", unsafe_allow_html=True)
+    st.warning("🚧 **[CONCEPT PREVIEW]** This is a mockup of a future enterprise feature. The data below is statically generated to demonstrate the planned UX.", icon="🚧")
     st.markdown("Modifying massive production tables causes lock contention and downtime. InfiniteClaw mitigates risk by writing mathematically proven non-blocking migrations.")
     
     st.markdown("### User Request")

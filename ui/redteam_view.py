@@ -6,6 +6,7 @@ from ui.styles import inject_styles
 def render_redteam_view():
     inject_styles()
     st.markdown("<h2 style='color:#ef4444;'>🧨 The AI Red Team (Pentester)</h2>", unsafe_allow_html=True)
+    st.warning("🚧 **[CONCEPT PREVIEW]** This is a mockup of a future enterprise feature. The data below is statically generated to demonstrate the planned UX.", icon="🚧")
     st.markdown("InfiniteClaw autonomously attacks your Staging environments every Sunday night. Review findings and author code patches instantly.")
 
     st.markdown("### 🔍 Weekly Threat Report — [Staging API]")

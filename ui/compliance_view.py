@@ -29,6 +29,7 @@ This report verifies that the infrastructure managed by InfiniteClaw meets SOC2 
 def render_compliance_view():
     inject_styles()
     st.markdown("<h2 style='color:#00f0ff;'>📜 Auto-SOC2 Compliance Engine</h2>", unsafe_allow_html=True)
+    st.warning("🚧 **[CONCEPT PREVIEW]** This is a mockup of a future enterprise feature. The report generated is currently a static template demonstrating the planned UX.", icon="🚧")
     st.markdown("Eliminate the 3-month audit cycle. Let the AI autonomously scan your infrastructure and generate mathematically proven compliance PDFs.")
 
     st.info("The AI will SSH into every node, execute AWS CLI commands to verify KMS encryption, parse Kubernetes RBAC roles, and synthesize a master audit report.")

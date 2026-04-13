@@ -95,8 +95,7 @@ def render_dashboard():
         logs = get_activity_logs(ws_id, limit=15)
         if logs:
             for log in logs:
-                from core.activity_feed import get_icon
-                icon = get_icon(log.get("event_type", ""))
+                icon = {"tool_call": "🔧", "ssh_command": "🖥️", "llm_error": "❌", "scan_complete": "🔍", "server_added": "🌐", "auto_heal": "🚑"}.get(log.get("event_type", ""), "📌")
                 st.markdown(
                     f"<div style='padding:4px 0;border-bottom:1px solid var(--border-glass);font-size:0.8rem;'>"
                     f"{icon} <span style='color:var(--text-secondary);'>{log.get('created_at','')[:19]}</span> "

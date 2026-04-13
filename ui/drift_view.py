@@ -6,6 +6,7 @@ from ui.styles import inject_styles
 def render_drift_view():
     inject_styles()
     st.markdown("<h2 style='color:#00f0ff;'>🛠️ Terraform Drift Monitor</h2>", unsafe_allow_html=True)
+    st.warning("🚧 **[CONCEPT PREVIEW]** This is a mockup of a future enterprise feature. The data below is statically generated to demonstrate the planned UX.", icon="🚧")
     st.markdown("InfiniteClaw autonomously monitors live AWS state against your strict Terraform configuration.")
     
     st.error("🚨 DRIFT DETECTED IN RESOURCE: `aws_security_group.sg_web`")

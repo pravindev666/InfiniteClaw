@@ -225,7 +225,8 @@ def render_activity_logs():
     st.markdown("## 📋 Activity Logs")
     st.markdown("---")
     from core.local_db import get_activity_logs
-    from core.activity_feed import get_icon
+    def get_icon(t):
+        return {"tool_call": "🔧", "ssh_command": "🖥️", "llm_error": "❌", "scan_complete": "🔍", "server_added": "🌐", "auto_heal": "🚑"}.get(t, "📌")
     ws_id = get_current_workspace_id()
     if ws_id:
         logs = get_activity_logs(ws_id, limit=100)

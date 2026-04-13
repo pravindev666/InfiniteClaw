@@ -5,8 +5,7 @@ Runs all 30 tool adapters' detect() against a server in parallel.
 import concurrent.futures
 from typing import Dict, List
 from core.ssh_manager import ssh_manager
-from core.local_db import upsert_server_tool, update_server_last_scan
-from core.activity_feed import log_event
+from core.local_db import upsert_server_tool, update_server_last_scan, log_activity, get_current_workspace_id
 from tools.tool_router import tool_router
 
 
@@ -18,7 +17,9 @@ def scan_server(server_id: str) -> List[Dict]:
     try:
         ssh_conn = ssh_manager.get_connection(server_id)
     except Exception as e:
-        log_event("scan_error", f"Cannot connect to server {server_id}: {e}", server_id=server_id)
+        ws_id = get_current_workspace_id()
+        if ws_id:
+            log_activity(ws_id, "scan_error", f"Cannot connect to server {server_id}: {e}", server_id=server_id)
         return []
 
     results = []
@@ -75,11 +76,9 @@ def scan_server(server_id: str) -> List[Dict]:
 
     # Log summary
     installed = [r for r in results if r["status"] not in ("not_installed", "error")]
-    log_event(
-        "scan_complete",
-        f"Scan complete: {len(installed)}/{len(results)} tools detected",
-        server_id=server_id
-    )
+    ws_id = get_current_workspace_id()
+    if ws_id:
+        log_activity(ws_id, "scan_complete", f"Scan complete: {len(installed)}/{len(results)} tools detected", server_id=server_id)
 
     # Sort by category then name
     results.sort(key=lambda x: (x["category"], x["tool_name"]))
