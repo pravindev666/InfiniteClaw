@@ -33,6 +33,8 @@ CORE_PAGES = {
     "Ghost Mode": "ghost",
     "Secrets Scanner": "secrets",
     "Infra DNA": "dna",
+    "Time Travel": "timetravel",
+    "Auto-Mesh": "mesh",
     "Multi-Terminal": "multiterminal",
     "Runbooks": "runbooks",
     "War Room": "warroom",
@@ -40,7 +42,6 @@ CORE_PAGES = {
     "Flow Builder": "flow",
     "Chat": "chat",
     "Remote Servers": "servers",
-    "CI/CD Workflow": "workflow",
     "Settings": "settings",
 }
 
@@ -352,6 +353,12 @@ def render_main():
     elif selected == "dna":
         from ui.infra_dna_view import render_infra_dna
         render_infra_dna()
+    elif selected == "timetravel":
+        from ui.time_travel_view import render_time_travel_view
+        render_time_travel_view()
+    elif selected == "mesh":
+        from ui.wireguard_mesh_view import render_wireguard_mesh_view
+        render_wireguard_mesh_view()
     elif selected == "multiterminal":
         from ui.multi_terminal_view import render_multi_terminal
         render_multi_terminal()

@@ -22,6 +22,8 @@ EXPLANATIONS = {
     "Runbooks": "A runbook is a checklist of commands to run in order (like 'update packages → restart services → check health'). Save them once, run them with one click forever.",
     "War Room": "When something is broken RIGHT NOW, this is your emergency screen. It pulls live data from the crashing server and asks AI to diagnose the problem.",
     "Dashboard": "A visual overview of all your connected servers and the tools running on them. Like a scoreboard for your infrastructure.",
+    "Time Travel": "Before you run a dangerous database command or delete a massive folder, take a Snapshot here. If things blow up, click Undo and the server instantly rewinds back.",
+    "Auto-Mesh": "Imagine having a server in AWS (America) and a server in DigitalOcean (Europe). This installs WireGuard on both, giving them a private encrypted tunnel.",
     "Flow Builder": "A drag-and-drop visual editor for creating deployment pipelines. Think of it like building a flowchart that actually runs commands.",
     "Chat": "Talk to the AI assistant about your infrastructure. Ask it questions like 'How much disk space is left on server-1?' and it will check for you.",
     "Remote Servers": "This is where you add your servers. You need a server's IP address, username, and password (or SSH key) to connect.",
