@@ -20,3 +20,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+SOFTWARE.
+
+---
+
+### EXPLICIT INFRASTRUCTURE LIABILITY DISCLAIMER
+**WARNING:** InfiniteClaw is a highly privileged orchestration tool that executes raw SSH commands, modifies server routing, provisions infrastructure, and actively terminates cloud resources. 
+
+By running this software, you explicitly acknowledge and agree that:
+1. **You are granting an AI the ability to execute destructive commands** on the servers you connect to it.
+2. The authors (Zeta Aztra Technologies / Pravin A Mathew) take **ABSOLUTELY ZERO RESPONSIBILITY** for data loss, server downtime, misconfigurations, deleted Docker containers, compromised SSH keys, network lockouts, or runaway cloud billing costs.
+3. You run this software entirely at your own risk. Do not connect InfiniteClaw to production infrastructure unless you fully understand the consequences of autonomous SSH execution.
