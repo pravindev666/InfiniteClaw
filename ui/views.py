@@ -16,7 +16,6 @@ from ui.dashboard_view import render_dashboard
 from ui.devops_tool_view import render_tool_page
 from ui.server_view import render_server_view
 from ui.chat_view import render_chat_view
-from ui.workflow_view import render_workflow_view
 from tools.tool_router import TOOL_CATEGORIES, tool_router
 
 
