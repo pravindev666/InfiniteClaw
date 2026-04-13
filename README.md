@@ -25,6 +25,22 @@ It evolves your infrastructure into an **"Alpha-Mode"** environment where a sing
 
 ---
 
+## 🏗️ Architecture: The "Brutal SSH" Paradigm
+
+Here is exactly what InfiniteClaw is: It is a **Sovereign, SSH-based AI Command Center**. 
+
+It doesn't use massive, bloated, expensive APIs to talk to AWS or Datadog. Instead, it uses simple, brutal **SSH**. You give the AI the IP address and the SSH key to your servers, and the AI logs in and executes raw bash commands on your behalf—just like a senior engineer sitting at a keyboard. It stores everything locally in a SQLite database so nobody else owns your operational data.
+
+Because InfiniteClaw uses raw SSH connection pooling (`core/ssh_manager.py`), you can connect **ANY** server to it:
+
+*   **Docker Servers**: If you connect a raw Ubuntu VM, the AI can natively run `docker pull` and `docker run` to deploy your DBs.
+*   **Kubernetes**: If you connect it to your K8s control plane node, the AI can natively run `kubectl scale deployments` or read failing pod logs.
+*   **Terraform/Infrastructure**: If you connect it to your main jumpbox, the AI can natively open and run `terraform plan` to build exact copies of your VPCs and networks.
+
+You are literally wiring disjointed, isolated production servers into a central hive-mind that you control across **31 distinct DevOps tools**.
+
+---
+
 ## ∞ Features
 
 | Feature | Description |
