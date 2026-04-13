@@ -2,6 +2,8 @@
 
 <img src="static/img/infiniteclaw-logo.png" alt="InfiniteClaw" width="200"/>
 
+![InfiniteClaw Catalyst](static/img/infiniteclaw-catalyst-infographic.png)
+
 # ∞ InfiniteClaw
 
 ### AI-Powered DevOps Infrastructure Management Platform
