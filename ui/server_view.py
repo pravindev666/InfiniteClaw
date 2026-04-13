@@ -10,6 +10,7 @@ from core.local_db import (
 from core.ssh_manager import ssh_manager
 from tools.scanner import scan_server
 from ui.styles import status_badge
+from ui.learn_mode import explain, is_learn_mode_on
 
 
 def render_server_view():
@@ -20,6 +21,9 @@ def render_server_view():
     st.markdown("---")
 
     # ─── Add Server ───
+    if is_learn_mode_on():
+        st.info("💡 **What is this page?** This is where you connect your Linux servers to InfiniteClaw. You need: the server's IP address (like 192.168.1.100), a username (like 'ubuntu'), and a password or SSH key file. If you don't have a server yet, try setting up a free one on Oracle Cloud or use VirtualBox locally.", icon="💡")
+
     with st.expander("➕ Add New Server", expanded=False):
         col1, col2 = st.columns(2)
         with col1:

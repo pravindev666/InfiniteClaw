@@ -11,6 +11,7 @@ from core.local_db import (
 )
 from core.config import get_all_keys, set_key, AVAILABLE_MODELS
 from ui.styles import inject_styles, sidebar_header
+from ui.learn_mode import render_learn_mode_toggle, explain_sidebar
 from ui.dashboard_view import render_dashboard
 from ui.devops_tool_view import render_tool_page
 from ui.server_view import render_server_view
@@ -136,6 +137,8 @@ def render_login():
             </div>
         </div>
         """, unsafe_allow_html=True)
+
+        st.info("**First time here?** Click the 'Register' tab below to create a free account. Just pick any email and password — everything runs locally on your computer, nothing is sent to the cloud.", icon="👋")
 
         tab1, tab2 = st.tabs(["🔑 Login", "📝 Register"])
 
@@ -293,6 +296,9 @@ def render_main():
                         st.session_state["active_tool"] = tool_name
                         st.session_state["nav_page"] = "tool"
 
+        # Learn Mode toggle
+        render_learn_mode_toggle()
+
         st.markdown("---")
         if st.button("🚪 Logout", use_container_width=True):
             for key in list(st.session_state.keys()):
@@ -307,7 +313,11 @@ def render_main():
         st.session_state["nav_page"] = None
         return
 
-    # Core pages
+    # Core pages — show Learn Mode explanation for the selected page
+    page_name = [k for k, v in CORE_PAGES.items() if v == selected]
+    if page_name:
+        explain_sidebar(page_name[0])
+
     if selected == "jarvis":
         from ui.jarvis_view import render_infinity_core
         render_infinity_core()
