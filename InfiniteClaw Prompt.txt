@@ -1,0 +1,73 @@
+Build me my own personal AI assistant that I can run on my own computer. For Devops
+The main idea is that it should connect to all the different chat apps I use, 
+like 
+so I can talk to it from anywhere. 
+It should feel like it's always running in the background, 
+fast and local on my machine, not some cloud service.
+
+I'll use my own OpenAI key for the brain. 
+The project I saw has this weird but cool lobster theme, 
+which I like, so let's keep that aesthetic. 
+The goal is a single, personal assistant that brings 
+all my communication channels together. 
+It seems like it has a command-line setup process, 
+so please get that all configured and running as a background service.
+
+
+i have attached openclaw and WOLFCLAW in seperate project folders
+nnow build a project named InfiniteClaw genrate the themed icon etc 
+the main ideas is this infiniteclaw is a wrapper of openclaw and wolfclaw
+im gonna start with cli and exe like wolfclaw (streamlit just for the concept)
+the main in language is python for all ends
+the copy the UI of wolfclaw
+those sidebars etc
+so in the side bar has the main like those wolfclaw
+where i connect to the servers via ssh and the AI coonect those keys those settings everything the same except
+in the sidebar should have jenkins,prometheus,grafana,ansible,splunk,docker,kubernetes etc
+where the ai talks with those
+so for example i click jenkins ...the chat box should be there (which is connected with the AI keys)
+now the ai should detect if there is jenkins installed in the server and a green or red ststus should be there
+and i shold get a pictoriual gui where the Ai interact with the jenkns tools
+so the mistakes can be said to the AI to fix those
+like for all devops tools
+so i connect to those jenkins,dockers etc via the ai chatbox and i have gui where it interacts with those tools
+regarding the gui interacts if i say install jenkins in this server ip etc i should get a pic that the jenkins is installed and if i ask to open a workflow is houl see in the gui in that dedicated jnekins tab etc
+likewise for jother devops aws tools
+i can control via telegram etc and get status etc
+this infinite claw should be like the companies entire infras AI management tool
+where the Ai controls all the servers list and the tools in those servers etc
+so in the sidebar a seperate  i get the entire workflow of the devops tools connected
+like docker connected with which servers kubernetes
+if the code is pushed i should see the how those work
+long story short ---i push the code i should see where the code goes and from there how it build etc via the AI using those tools..by controliing those tools using commands
+it should be like wattching through the glass into the cyberworld
+REFER WOLFCLAW FOR THE SIDEBAR
+DASHBOARD
+MANAGE BOTS
+CHAT
+ACTIVITY LOGS
+ANALYTICS
+KNOWLEDGE BASE
+REMOTE SERVERS
+
+SO ADDITIONALLY
+JENKINS
+DOCKER
+KUBERNETES
+PROMETHEUS
+GRAFANA
+ANSIBLE
+SPLUNK
+TERRAFORM
+PLEASE REFEREN WOLFCLAW AND OPENCCLAW TO BUILD THIS
+BUT IN YTHON
+
+
+
+
+git init
+git add .
+git commit -m "HaShem Adonoi Eloheinu Melech HaOlam Help me With this 2 Commit"
+git branch -M main
+git remote add origin git@github.com:pravindev666/InfiniteClaw.git
+git push -u origin main

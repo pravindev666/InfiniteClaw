@@ -29,6 +29,12 @@ CORE_PAGES = {
     "DB Auto-Migrator": "migrator",
     "CFO FinOps": "finops",
     "SOC2 Auditor": "audit",
+    "Ghost Mode": "ghost",
+    "Secrets Scanner": "secrets",
+    "Infra DNA": "dna",
+    "Multi-Terminal": "multiterminal",
+    "Runbooks": "runbooks",
+    "War Room": "warroom",
     "Dashboard": "dashboard",
     "Flow Builder": "flow",
     "Chat": "chat",
@@ -326,6 +332,24 @@ def render_main():
     elif selected == "audit":
         from ui.compliance_view import render_compliance_view
         render_compliance_view()
+    elif selected == "ghost":
+        from ui.ghost_mode_view import render_ghost_mode
+        render_ghost_mode()
+    elif selected == "secrets":
+        from ui.secrets_scanner_view import render_secrets_scanner
+        render_secrets_scanner()
+    elif selected == "dna":
+        from ui.infra_dna_view import render_infra_dna
+        render_infra_dna()
+    elif selected == "multiterminal":
+        from ui.multi_terminal_view import render_multi_terminal
+        render_multi_terminal()
+    elif selected == "runbooks":
+        from ui.runbook_view import render_runbook_view
+        render_runbook_view()
+    elif selected == "warroom":
+        from ui.warroom_view import render_war_room
+        render_war_room()
     elif selected == "dashboard":
         render_dashboard()
     elif selected == "flow":
