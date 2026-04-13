@@ -25,6 +25,17 @@ It evolves your infrastructure into an **"Alpha-Mode"** environment where a sing
 
 ---
 
+## ⚠️ Project Status: Transparency Notice
+
+InfiniteClaw is a highly ambitious, enterprise-level undertaking. While the core SSH execution engine, Auto-Healing, Secrets Scanner, and SRE features are robust and functional, we believe in radical transparency:
+
+> [!IMPORTANT]
+> **ROADMAP & CONCEPT MODULES**: Some advanced enterprise features (such as **Terraform Drift Detection**, **Auto-SOC2**, **DB Auto-Migrator**, and **AI Red-Teaming**) are currently in the **Concept Preview** phase. If a module displays a "🚧 [CONCEPT PREVIEW]" banner or a button is unresponsive, it is because we are actively perfecting the AI safety logic before unleashing autonomous destructive commands on your infrastructure.
+> 
+> **The Code Evolves**: We are developing at light-speed. Evolution is our only constant, and these preview modules are actively being converted into live, SSH-executable nodes.
+
+---
+
 ## 🏗️ Architecture: The "Brutal SSH" Paradigm
 
 Here is exactly what InfiniteClaw is: It is a **Sovereign, SSH-based AI Command Center**. 
